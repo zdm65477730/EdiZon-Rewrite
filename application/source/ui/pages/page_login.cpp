@@ -33,7 +33,7 @@ namespace edz::ui::page {
         this->m_label = new brls::Label(brls::LabelStyle::MEDIUM, "edz.page.login.hint"_lang, true);
         this->m_emailItem = new brls::ListItem("edz.page.login.email"_lang);
         this->m_passwordItem = new brls::ListItem("edz.page.login.password"_lang);
-        this->m_loginBtn = new brls::Button(brls::ButtonStyle::PLAIN);
+        this->m_loginBtn = new brls::Button(brls::ButtonStyle::REGULAR);
         
 
         this->m_label->setParent(this);

@@ -191,7 +191,7 @@ namespace edz::hlp {
         u8 indata[0xA0] = { 0 };
         indata[0x96] = 1;
 
-        appletCreateLibraryApplet(&aph, AppletId_playerSelect, LibAppletMode_AllForeground);
+        appletCreateLibraryApplet(&aph, AppletId_LibraryAppletPlayerSelect, LibAppletMode_AllForeground);
         libappletArgsCreate(&args, 0);
         libappletArgsPush(&args, &aph);
 

@@ -24,18 +24,18 @@ EdiZon是Nintendo Switch的自制软件。因此，需要一种在系统上运�
 !!! 注意
     除从存档文件提供者处下载存档文件外，如需所有在线功能都可用，需要一个[Cheat Slips](https://www.cheatslips.com)账户。它是免费，快速且易于创建的。
 
-## TLDR;
+## 功能介绍
 
-EdiZon has the following main functionalities:
-- Save file management
-- Save file repositories
-- Save file editing
-- On-the-fly memory editing
-- Virtual Controller button mapping
-- Computer companion app
+EdiZon主要功能如下：
+- 存档文件管理
+- 存档文件库
+- 存档文件编辑
+- 动态内存编辑
+- 虚拟控制器按钮映射
+- 电脑伴侣应用
 
-Please use the free and open source CFW [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) either with or without the [Kosmos](https://github.com/AtlasNX/Kosmos) package to run EdiZon. Every other way is unsupported and may or may not work.
-For most online features a [Cheat Slips](https://www.cheatslips.com) account is required which is free and easy to create
+请使用免费和开源的CFW [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere)，无论是否带有[Kosmos](https://github.com/AtlasNX/Kosmos) 程序包，都可以运行EdiZon。其他所有方式均不受支持，并且可能会或可能不会起作用。
+对于大多数在线功能，需要一个 [Cheat Slips](https://www.cheatslips.com) 帐户，该帐户免费且易于创建。
 
-!!! Info
-    If you have any questions about EdiZon, something doesn't work or you just want to say hi, feel free to join our [Discord Server](https://discord.gg/qyA38T8)!
+!!! 信息
+    如果您对EdiZon存有任何疑问，有什么功能不工作，或者您只想打个招呼，请随时加入我们 [Discord Server](https://discord.gg/qyA38T8)！

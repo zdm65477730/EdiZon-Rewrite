@@ -91,7 +91,7 @@ namespace edz::ui::element {
         this->m_historyLabel->setBoundaries(50, 720 - style->AppletFrame.footerHeight - 50, 1280 - 100, 50);
     }
 
-    brls::View* HexEditor::getNextFocus(brls::FocusDirection direction, rls::View *oldFocus) {    
+    brls::View* HexEditor::getNextFocus(brls::FocusDirection direction, brls::View *oldFocus) {    
         switch (direction) {
             case brls::FocusDirection::UP:
                 this->m_selectY = std::max(1, this->m_selectY - 1);

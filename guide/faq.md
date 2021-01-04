@@ -1,36 +1,36 @@
-# Frequently asked Questions 
+# 常见问题
 
-!!! Faq 1. How do I use the Memory Editor?
-    The integrated Memory Editor works very similar to Cheat Engine, a popular cheat tool for the computer. To edit a value in a game, follow these steps:
+!!! FAQ1. 如何使用内存编辑器？
+    集成的内存编辑器的工作方式与Cheat Engine非常相似，Cheat Engine是计算机上流行的金手指工具。若要编辑游戏中的值，请按照下列步骤操作：
 
-    1. Open your game.
-    2. Find a value in the game you want to change. Let's say you have 1000 coins in that game.
-    3. Return back to the home menu with the game running in the background.
-    4. Hold down the R button, open the Album, select EdiZon and open the Cheat Engine menu.
-    5. Select a datatype that is big enough to fit your value, select the correct memory region (this is in most cases the HEAP region) and then enter the value you want to search for. In this case 1000.
-    6. Let it search and once it's done go back into the game
-    7. Change the coin count a little. Let's say you buy something and now you have 900 coins left.
-    8. Go back into edizon and search for 900 this time. It will narrow down the amount of candidates.
-    9. Repeat that until you only have a few addresses left
-    10. Edit the few addresses that are left now to the value you want. Let's say 9999. 
-    11. Go back in the game and if you got the correct address, you should now have 9999 coins.
+    1. 打开游戏。
+    2. 在您要更改的游戏中找到一个值。假设您在该游戏中有1000个硬币。
+    3. 返回主菜单，游戏在后台运行。
+    4. 按住R按钮，打开相册，选择EdiZon，然后打开金手指引擎菜单。
+    5. 选择一个足够大以适合您的值的数据类型，选择正确的内存区域（在大多数情况下，这是堆存储区域），然后输入要搜索的值。在这种情况下为1000。
+    6. 让它搜索，完成后返回游戏。
+    7. 稍微改变硬币数。假设您买了东西，现在剩下900个硬币。
+    8. 返回Edizon，这次搜索900。它将缩小候选值的数量。
+    9. 重复该操作，直到只剩下几个地址。
+    10. 编辑现在剩下的几个地址，以保留所需的值。假设9999。
+    11. 返回游戏，如果您获得正确的地址，那么您现在应该拥有9999个硬币。
 
-!!! Faq 2. What is a cheat and how do I use them
-    Cheats are tiny programs running in the background while you're playing a game that edit the game's memory according to the instructions inside the cheat. Cheats depend a lot on the layout of the game's memory. If the game code changes (via a update for example), the cheat codes break and usually have to be redone from scratch.
+!!! FAQ 2. 什么是金手指，我该如何使用？
+    金手指是您玩游戏时，在后台运行的微型程序，它们会根据金手指内的指令编辑游戏的内存。金手指很大程度上取决于游戏内存的布局。如果游戏代码发生更改(例如游戏更新了)，则金手指代码会失效，一般必须从头开始制作。
 
-    Since SXOS had the first Cheat implementation, many sites call them SXOS Cheats. Atmosphere uses the exact same format though with some extensions. Therefor, all SXOS cheats work on Atmosphere but not all Atmosphere cheats work on SXOS.
+    由于SXOS具有一个金手指的实现，因此许多站点将其称为SXOS金手指。尽管有些扩展，但Atmosphere使用完全相同的格式。因此，所有SXOS金手指都可在Atmosphere上运行，但并非所有Atmosphere作弊都可在SXOS上运行。
 
-    To activate cheats, do the following:
+    要激活金手指，请执行以下操作：
 
-    1. Start your game of choice.
-    2. Press the home button to go back to the main menu but don't close the game completely
-    3. Hold down the R button and open the Album
-    4. Open EdiZon
-    5. Select the Cheats Tab
-    6. Select the cheats you want to enable
+    1. 开始您选择的游戏。
+    2. 按下主屏幕按钮返回主菜单，但不要完全关闭游戏。
+    3. 按住R按钮并打开相册。
+    4. 打开EdiZon。
+    5. 选择金手指选项卡。
+    6. 选择要启用的金手指代码。
 
-!!! Faq 3. All Cheats are enabled by default. How can I turn this off?
-    This is the default option so it doesn't have to depend purely on EdiZon to load it's cheats.
+!!! FAQ 3. 默认情况下，所有金手指功能都是启用的。如何关闭此功能？
+    这是默认选项，因此不必完全依赖EdiZon加载金手指文件。
 
-    It can be fixed by opening the `/atmosphere/system_settings.ini` file in a normal text editor and changing `dmnt_cheats_enabled_by_default = u8!0x1` to `dmnt_cheats_enabled_by_default = u8!0x0`.
-    Next time you start a game now, all cheats will be disabled and you'll have to open EdiZon to activate the cheats you need.
+    可以通过在常规文本编辑器中打开 `/atmosphere/system_settings.ini` 文件并将 `dmnt_cheats_enabled_by_default = u8!0x1` 更改为 `dmnt_cheats_enabled_by_default = u8!0x0` 来解决该问题。
+    下次您开始游戏时，所有金手指都会被禁用，您必须打开EdiZon重新激活您所需的金手指功能。
