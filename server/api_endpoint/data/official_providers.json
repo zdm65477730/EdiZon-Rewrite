@@ -1,9 +1,9 @@
 {
     "providers" : [
         {
-            "name"  : "Test",
+            "name"  : "测试",
             "owner" : "WerWolv",
-            "description" : "A test save file repo for testing",
+            "description" : "用来测试的存档文件库",
             "url"   : "https://werwolv.net"
         }
     ]

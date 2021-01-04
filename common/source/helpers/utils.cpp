@@ -43,7 +43,7 @@
 namespace edz::hlp {
 
     static HidsysNotificationLedPattern patternOn, patternOff;
-    static u64 uniquePadIds[0x10];
+    static HidsysUniquePadId uniquePadIds[0x10];
     static s32 uniquePadCnt;
 
 #ifndef __OVERLAY__
@@ -295,7 +295,7 @@ namespace edz::hlp {
             return "sdmc:/ReiNX/contents";
 
         if (isOnSXOS())
-            return "sdmc:/sxos/contents";
+            return "sdmc:/sxos/titles";
 
         return "";
     }
@@ -370,7 +370,7 @@ namespace edz::hlp {
     }
 
     EResult controllerLEDInitialize() {
-        ER_TRY(hidsysGetUniquePadsFromNpad(hidGetHandheldMode() ? CONTROLLER_HANDHELD : CONTROLLER_PLAYER_1, uniquePadIds, 2, &uniquePadCnt));
+        ER_TRY(hidsysGetUniquePadsFromNpad(hidGetHandheldMode() ? HidNpadIdType_Handheld : HidNpadIdType_No1, uniquePadIds, 2, &uniquePadCnt));
 
         std::memset(&patternOn, 0x00, sizeof(HidsysNotificationLedPattern));
         std::memset(&patternOff, 0x00, sizeof(HidsysNotificationLedPattern));

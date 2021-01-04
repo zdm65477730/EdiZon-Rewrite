@@ -45,7 +45,7 @@ namespace edz::ui::element {
         
         void draw(NVGcontext *vg, int x, int y, unsigned width, unsigned height, brls::Style *style, brls::FrameContext *ctx) override;
         void layout(NVGcontext* vg, brls::Style *style, brls::FontStash *stash) override;
-        brls::View* getNextFocus(brls::FocusDirection direction, void* oldFocus) override;
+        brls::View* getNextFocus(brls::FocusDirection direction, brls::View* oldFocus) override;
         brls::View* getDefaultFocus() override;
         bool onClick();
 

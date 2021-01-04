@@ -1,6 +1,6 @@
 {
     "author" : "WerWolv",
-    "description" : "A sample save editor config to test the editor",
+    "description" : "存档编辑器配置示例，用以测试编辑器",
     "scriptLanguage" : "python",
     "beta" : true,
     "all" : [
@@ -10,9 +10,9 @@
             "script" : "test.py",
             "items" : [
                 {
-                    "name" : "Integer Value A",
-                    "infoText" : "This is a sample integer value",
-                    "category" : "Category 1",
+                    "name" : "整数值A",
+                    "infoText" : "这是一个整数值示例",
+                    "category" : "类别1",
                     "arguments" : {
                         "numItems" : 555,
                         "enabled" : true,
@@ -26,9 +26,9 @@
                     }
                 },
                 {
-                    "name" : "Integer Value B",
-                    "infoText" : "This is a second sample integer value",
-                    "category" : "Category 2",
+                    "name" : "整数值B",
+                    "infoText" : "这是第二个整数值示例",
+                    "category" : "类别2",
                     "arguments" : {
                         "test" : "Hello World"
                     },
@@ -39,9 +39,9 @@
                     }
                 },
                 {
-                    "name" : "Boolean Value",
-                    "infoText" : "This is a sample boolean value",
-                    "category" : "Category 1",
+                    "name" : "布尔值",
+                    "infoText" : "这是一个布尔值示例",
+                    "category" : "类别1",
                     "arguments" : {
                         "derp" : 3.141592654
                     },
@@ -52,9 +52,9 @@
                     }
                 },
                 {
-                    "name" : "String Value",
-                    "infoText" : "This is a sample string value",
-                    "category" : "Category 1",
+                    "name" : "字符串值",
+                    "infoText" : "这是一个字符串值示例",
+                    "category" : "类别1",
                     "arguments" : {
                         "testA" : true,
                         "testB" : false
@@ -66,22 +66,22 @@
                     }
                 },
                 {
-                    "name" : "Comment",
-                    "infoText" : "Some comment",
-                    "category" : "Category 1",
+                    "name" : "注释",
+                    "infoText" : "一些注释",
+                    "category" : "类别1",
                     "arguments" : {
                         "testA" : true,
                         "testB" : false
                     },
                     "widget" : {
-                        "type" : "comment",
-                        "comment" : "This very long and super hyper informative comment will help you a lot when trying to understand what this value above was meant to do..."
+                        "type" : "注释",
+                        "comment" : "当试图了解上述值的含义时，这篇冗长而超级详尽的注释将对您有很大帮助。"
                     }
                 },
                 {
-                    "name" : "List Value",
-                    "infoText" : "This is a sample list value",
-                    "category" : "Category 1",
+                    "name" : "列表值",
+                    "infoText" : "这是一个列表值示例",
+                    "category" : "类别1",
                     "arguments" : {
                         "testA" : true,
                         "testB" : false
@@ -93,9 +93,9 @@
                     }
                 },
                 {
-                    "name" : "Progress bar",
-                    "infoText" : "This is a sample progress bar",
-                    "category" : "Category 3",
+                    "name" : "进度条",
+                    "infoText" : "这是一个进度条案例",
+                    "category" : "类别3",
                     "arguments" : {
                         "testA" : true,
                         "testB" : false

@@ -34,7 +34,7 @@ namespace edz::save {
 
             // If account doesn't existing anymore, use default properties
             if (!exists) {
-                this->m_nickname = "< Unknown User >";
+                this->m_nickname = "< 未知用户 >";
 
                 return;
             }

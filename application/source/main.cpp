@@ -167,7 +167,7 @@ int main(int argc, char *argv[]) {
     // Load config file
     hlp::ConfigManager::load();
 
-    printf("\033[0;33mWelcome to EdiZon\033[0m\n");
+    printf("\033[0;33m欢迎使用EdiZon\033[0m\n");
 
 // Set the startup Gui
 #if SPLASH_ENABLED

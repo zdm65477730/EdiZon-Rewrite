@@ -60,8 +60,7 @@ namespace edz::ui::element {
         this->m_table->invalidate();
     }
 
-    brls::View* TitleInfo::getNextFocus(brls::FocusDirection direction, void* parentUserdata) {        
+    brls::View* TitleInfo::getNextFocus(brls::FocusDirection direction, brls::View *parentUserdata) {
         return this;
     }
-
 }

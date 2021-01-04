@@ -1,30 +1,28 @@
-# Introduction to EdiZon
+# EdiZon简介
 
-## Guides and Infos
-- [Frequently asked Questions](faq.html)
+## 指南和信息
+- [常问问题](faq.html)
 
-## What is EdiZon
+## EdiZon是什么
 
-EdiZon is an all-round Game enhancement Tool for the Nintendo Switch. It includes support for save file backup and restoring
-(either on demand or automatically after closing a game), save file uploading to [Cheat Slips](https://cheatslips.com), save file downloading from
-both official and self-hosted save file providers,user made save file editors, cheats and cheat engine-like memory editing
-using Atmosphere's dmnt:cht service, button press replaying and button mapping using virtual controllers, automatic save file
-editor and cheat updating and a sophisticated, cross-platform companion tool for cheat creation and interfacing with the rest
-of EdiZon.
+EdiZon是用于Nintendo Switch的全方位游戏增强工具。它包括对存档文件备份和还原的支持(根据需要或在关闭游戏后自动显示)、
+存档文件上传到[Cheat Slips](https://cheatslips.com)、从官方和自托管存档文件提供者处下载存档文件、由用户创建存档文件
+编辑器、 使用Atmosphere的dmnt:cht服务进行游戏金手指修改和类似金手指引擎的内存编辑、使用虚拟控制器进行按钮按下重放和按
+钮映射、存档文件编辑器和金手指自动更新以及复杂的、跨平台的用于金手指创建并与EdiZon的其余部分进行交互的辅助工具。
 
 
-## How to use EdiZon
+## 如何使用EdiZon
 
-EdiZon is a homebrew application for the Nintendo Switch. Therefor a way of running homebrew on your system is required.
-The supported way to do this is by using the open source CFW [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere).
+EdiZon是Nintendo Switch的自制软件。因此，需要一种在系统上运行自制程序的方法。
+支持的方法是使用开源CFW[Atmosphère](https://github.com/Atmosphere-NX/Atmosphere)。
 
-A guide about how to setup Kosmos on your Nintendo Switch can be found [here](https://switch.homebrew.guide).
+可以找到有关如何在Nintendo Switch上设置Kosmos的指南 [这里](https://switch.homebrew.guide).
 
-After setup, it is recommended to launch EdiZon by holding down the R button, opening the Album and then accessing EdiZon from there.
-Launching by overriding an Application with the hbmenu does work, cheat and memory editing support will be unavailable though.
+设置完成后，建议通过按住R按钮，打开'相册'，然后从那里访问并启动EdiZon。
+通过使用hbmenu覆盖应用程序启动确实可以工作，但是金手指和内存编辑支持将不可用。
 
-!!! Note
-    For all online functions besides save file downloading from save file providers, a [Cheat Slips](https://www.cheatslips.com) account is required. It is free, quick and easy to create one though
+!!! 注意
+    除从存档文件提供者处下载存档文件外，如需所有在线功能都可用，需要一个[Cheat Slips](https://www.cheatslips.com)账户。它是免费，快速且易于创建的。
 
 ## TLDR;
 

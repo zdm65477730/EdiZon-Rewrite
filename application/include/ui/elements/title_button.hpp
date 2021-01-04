@@ -62,7 +62,7 @@ namespace edz::ui::element {
             std::vector<brls::BoxLayoutChild*> getChildren();
             void addTitle(std::unique_ptr<save::Title> &title);
             brls::View* defaultFocus(brls::View *oldFocus);
-            brls::View* getNextFocus(brls::FocusDirection direction, void* oldFocus) override;
+            brls::View* getNextFocus(brls::FocusDirection direction, brls::View* oldFocus) override;
             
     };
 

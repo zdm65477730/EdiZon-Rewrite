@@ -182,35 +182,35 @@ extern "C" {
 
         switch (ctx->error_desc) {
             case ThreadExceptionDesc_BadSVC:
-                errorDesc = "Bad SVC";
+                errorDesc = "SVC错误";
                 break;
             case ThreadExceptionDesc_InstructionAbort:
-                errorDesc = "Instruction Abort";
+                errorDesc = "指令中止";
                 break;
             case ThreadExceptionDesc_MisalignedPC:
-                errorDesc = "Misaligned Program Counter";
+                errorDesc = "程序计数器未对齐";
                 break;
             case ThreadExceptionDesc_MisalignedSP:
-                errorDesc = "Misaligned Stack Pointer";
+                errorDesc = "堆栈指针未对齐";
                 break;
             case ThreadExceptionDesc_SError:
-                errorDesc = "SError";
+                errorDesc = "软件错误";
                 break;
             case ThreadExceptionDesc_Trap:
-                errorDesc = "SIGTRAP";
+                errorDesc = "断点或陷阱指令信号";
                 break;
             case ThreadExceptionDesc_Other:
-                errorDesc = "Segmentation Fault";
+                errorDesc = "段错误";
                 break;
             default:
-                errorDesc = "Unknown Exception [ 0x" + edz::hlp::toHexString<u16>(ctx->error_desc) + " ]";
+                errorDesc = "未知异常 [ 0x" + edz::hlp::toHexString<u16>(ctx->error_desc) + " ]";
                 break;
         }
 
         brls::Application::giveFocus(nullptr);
         edz::ui::Gui::fatal("%s\n\n%s: %s\nPC: BASE + 0x%016lx",
-            "A fatal exception occured!",
-            "Reason",
+            "发生致命异常！",
+            "原因",
             errorDesc.c_str(),
             ctx->pc.x - edz::hlp::getHomebrewBaseAddress());
 

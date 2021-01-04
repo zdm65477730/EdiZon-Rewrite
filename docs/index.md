@@ -1,11 +1,11 @@
-# Documentation
+# 文档
 
-This is the official EdiZon documentation meant for developers
+这是供开发人员使用的官方EdiZon文档
 
-!!! Info
-    If you have any questions about anything development related, feel free to join our [Discord Server](https://discord.gg/qyA38T8)!
+!!! 信息
+    如果您有任何与开发相关的问题，请随时加入我们 [Discord Server](https://discord.gg/qyA38T8)!
 <br>
 
-## Table of Content
-- [How to create a Save Editor](save_editor_creation.html)
-- [Cheat Language Opcodes](https://github.com/Atmosphere-NX/Atmosphere/blob/master/docs/cheats.md)
+## 目录
+- [如何创建存档编辑器](save_editor_creation.html)
+- [金手指语言操作码](https://github.com/Atmosphere-NX/Atmosphere/blob/master/docs/cheats.md)

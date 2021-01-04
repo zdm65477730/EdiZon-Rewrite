@@ -101,7 +101,7 @@ namespace edz::ui::page {
         this->m_loginBtn->frame(ctx);
     }
 
-    brls::View* PageLogin::getNextFocus(brls::FocusDirection direction, void* oldFocus) {
+    brls::View* PageLogin::getNextFocus(brls::FocusDirection direction, brls::View *oldFocus) {
         if (direction == brls::FocusDirection::DOWN) {
             if (oldFocus == this->m_emailItem)
                 return this->m_passwordItem;

@@ -1,37 +1,39 @@
-# How to create a EdiZon save file editor
+# 如何创建EdiZon存档文件编辑器
 
-## Introduction
+## 介绍
 
-EdiZon provides a unified interface for developers to build save editors in and for users to use them later on. This allows developers to not worry about writing a fancy GUI for their save editor so they can concentrate on the important thing, the save editing. For this to work EdiZon uses a config file, which describes what properties the save editing interface should display, and a Lua or Python script which does the editing based on the users input.
+EdiZon为开发人员提供了一个统一的界面，以在其中构建存档编辑器，并供用户之后使用。 这使开发人员不必担心为其存档编辑器编写精美的GUI，因此他们可以专注于重要的事情，即存档编辑。 
+为此，EdiZon使用了一个配置文件（该文件描述了存档编辑界面应显示的属性）以及一个Lua或Python脚本，该脚本根据用户输入进行编辑。
 
-## Requirements
+## 要求
 
-- A save file of any game
-- Experience in either Lua or Python
-- Knowledge about file formats and how to analyze an unknown file type
+- 任何游戏的存档文件
+- 有Lua或Python经验
+- 有文件格式以及如何分析未知文件类型相关的知识
 
-## Config files
+## 配置文件
 
-For EdiZon to know how to build its interface, a config file is required. A config file is a JSON formatted text file named `<titleID>.json` which gets placed in the `/switch/EdiZon/configs` folder where EdiZon looks for it.
+通过一个配置文件让EdiZon知道如何构建其界面。 
+配置文件是一个名为 `<titleID>.json` 的JSON格式的文本文件，该文件放置在EdiZon的搜索目录 `/switch/EdiZon/configs` 中。
 
-**A typical config file may look like this:**
+**典型的配置文件可能如下所示：**
 
 ```json
 {
     "author" : "WerWolv",
-    "description" : "A sample save editor config to test the editor",
+    "description" : "存档编辑器配置示例，用以测试编辑器",
+    "scriptLanguage" : "python",
     "beta" : true,
     "all" : [
         {
             "pathRegex" : [ "path", "\\d+", "[a-zA-Z0-9]+_\\d+" ],
             "fileNameRegex" : "filename\\.sav",
-            "scriptLanguage" : "python",
             "script" : "test.py",
             "items" : [
                 {
-                    "name" : "Integer Value A",
-                    "description" : "This is a sample integer value",
-                    "category" : "Category 1",
+                    "name" : "整数值A",
+                    "infoText" : "这是一个整数值示例",
+                    "category" : "类别1",
                     "arguments" : {
                         "numItems" : 555,
                         "enabled" : true,
@@ -45,9 +47,9 @@ For EdiZon to know how to build its interface, a config file is required. A conf
                     }
                 },
                 {
-                    "name" : "Integer Value B",
-                    "description" : "This is a second sample integer value",
-                    "category" : "Category 2",
+                    "name" : "整数值B",
+                    "infoText" : "这是第二个整数值示例",
+                    "category" : "类别2",
                     "arguments" : {
                         "test" : "Hello World"
                     },
@@ -58,11 +60,11 @@ For EdiZon to know how to build its interface, a config file is required. A conf
                     }
                 },
                 {
-                    "name" : "Boolean Value",
-                    "description" : "This is a sample boolean value",
-                    "category" : "Category 1",
+                    "name" : "布尔值",
+                    "infoText" : "这是一个布尔值示例",
+                    "category" : "类别1",
                     "arguments" : {
-                        "pi" : 3.141592654
+                        "derp" : 3.141592654
                     },
                     "widget" : {
                         "type" : "bool",
@@ -71,12 +73,12 @@ For EdiZon to know how to build its interface, a config file is required. A conf
                     }
                 },
                 {
-                    "name" : "String Value",
-                    "description" : "This is a sample string value",
-                    "category" : "Category 1",
+                    "name" : "字符串值",
+                    "infoText" : "这是一个字符串值示例",
+                    "category" : "类别1",
                     "arguments" : {
-                        "boolA" : true,
-                        "boolB" : false
+                        "testA" : true,
+                        "testB" : false
                     },
                     "widget" : {
                         "type" : "string",
@@ -85,17 +87,42 @@ For EdiZon to know how to build its interface, a config file is required. A conf
                     }
                 },
                 {
-                    "name" : "List Value",
-                    "description" : "This is a sample list value",
-                    "category" : "Category 1",
+                    "name" : "注释",
+                    "infoText" : "一些注释",
+                    "category" : "类别1",
                     "arguments" : {
-                        "address" : "0x12345",
-                        "size" : 8
+                        "testA" : true,
+                        "testB" : false
+                    },
+                    "widget" : {
+                        "type" : "注释",
+                        "comment" : "当试图了解上述值的含义时，这篇冗长而超级详尽的注释将对您有很大帮助。"
+                    }
+                },
+                {
+                    "name" : "列表值",
+                    "infoText" : "这是一个列表值示例",
+                    "category" : "类别1",
+                    "arguments" : {
+                        "testA" : true,
+                        "testB" : false
                     },
                     "widget" : {
                         "type" : "list",
                         "keys" : [ "Value 1", "Value 2", "Value 3", "Value 4"],
                         "values" : [ 555, 1337, 69, 420 ]
+                    }
+                },
+                {
+                    "name" : "进度条",
+                    "infoText" : "这是一个进度条案例",
+                    "category" : "类别3",
+                    "arguments" : {
+                        "testA" : true,
+                        "testB" : false
+                    },
+                    "widget" : {
+                        "type" : "progress"
                     }
                 }
             ]
@@ -104,28 +131,28 @@ For EdiZon to know how to build its interface, a config file is required. A conf
 }
 ```
 
-### Config file metadata
+### 配置文件元数据
 
-| Key name        | Description | Example values |
-|-----------------|-------------|----------------|
-| `author`        | The author of the save file editor. | `WerWolv` |
-| `description`   | A short description that will be presented to the user when opening the save editor menu. | `Can edit Gold, Health points and items` |
-| `beta`          | Weather this save editor has been tested by multiple people and it's save to use for everybody | `false` |
-| `all` / `X.Y.Z` | Here the key name can vary and there can be multiple different of these keys. If the `X.Y.Z` format is used, this portion of the config file will only be loaded if this specific version of the game is installed on the Switch. Using `all` here instead will make this part of the config be used for every game version. | `A list of version specific config metadata that may be used for different files` |
+| 键名            | 描述                                                        | 示例值         |
+|-----------------|-------------------------------------------------------------|----------------|
+| `author`        | 存档文件编辑器的作者。                                          | `WerWolv`      |
+| `description`   | 打开存档编辑器菜单时将向用户显示的简短说明。                      | `可以编辑金币、生命值和物品` |
+| `beta`          | 是否此存档编辑器已经经过多人测试，每个人都可以安全使用。 | `false` |
+| `all` / `X.Y.Z` | 这里的键名可以不同，并且这些键可以有多个不同的名称。如果使用 `X.Y.Z` 格式，则仅当在Switch上安装了此游戏的特定版本时，才会加载配置文件的这一部分。如果使用 `all` 将使配置的这一部分可用于游戏的每个版本。 | `特定版本的配置元数据列表，可用于不同的文件` |
 
-### Version and file-specific metadata
+### 版本和文件特定的元数据
 
-The value of the in `Config file metadata` described `all` / `X.Y.Z` key is a list of these Version and file-specific metadata items. Each entry of this list may have different configurations and therefor may target a different file in the save filesystem. This is used for if a game stores different information in separate files (ex. inventory data goes into inventory.bin, player data goes into player.bin).
+在 `配置文件元数据` 中描述的 `all` 或者 `X.Y.Z` 键的值是这些版本和特定于文件的元数据项的列表。该列表的每个条目可以具有不同的配置，因此可以针对存档文件系统中的不同文件。这用于游戏将不同的信息存储在单独的文件中时(例如，库存数据进入stock.bin，玩家数据进入player.bin)。
 
-| Key name        | Description | Example values |
-|-----------------|-------------|----------------|
-| `pathRegex`     | A list of strings containing one part of the path to the save file each. These strings are RegEx strings so every directory in the path can be matched by RegEx. | `[ "path", "\\d+", "[a-zA-Z0-9]+_\\d+" ]` |
-| `fileNameRegex` | A regex string to match the save file which will be edited by EdiZon | `filename\\.sav` |
-| `scriptLanguage` | The script language that will be used to edit the save file. | `python` or `lua` |
-| `script`        | The filename of the script that will be used to edit the save file | `json.lua` |
-| `items`        | This is a list of the config items that will be displayed inside the editor interface. Each item will be used to edit one property in the save file | See `Widget metadata` |
+| 键名             | 描述                                                                                                  | 示例值                                    |
+|------------------|------------------------------------------------------------------------------------------------------|-------------------------------------------|
+| `pathRegex`      | 字符串列表，每个字符串包含存档文件路径的一部分。这些字符串是正则字符串，因此路径中的每个目录都可以被正则匹配。 | `[ "path", "\\d+", "[a-zA-Z0-9]+_\\d+" ]` |
+| `fileNameRegex`  | 正则字符串，用来匹配由EdiZon编辑的存档文件。                                                             | `filename\\.sav`                         |
+| `scriptLanguage` | 用于编辑存档文件的脚本语言。                                                                            | `python` 或 `lua`                         |
+| `script`         | 用来编辑保存文件的脚本文件名。                                                                          | `json.lua`                                |
+| `items`          | 这是将在编辑器界面中显示的配置项目的列表。 每一项将用于编辑保存文件中的一个属性。                            | 参见 `小部件元数据`                        |
 
-### Widget metadata
+### 小部件元数据
 
 Widgets are the list items in the editor window that will communicate with the script and ultimately edit the save file depending on the user's input.
 

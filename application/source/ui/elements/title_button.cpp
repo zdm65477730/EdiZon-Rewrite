@@ -112,7 +112,7 @@ namespace edz::ui::element {
         return BoxLayout::getDefaultFocus();
     }
 
-    brls::View* HorizontalTitleList::getNextFocus(brls::FocusDirection direction, void* oldFocus) {
+    brls::View* HorizontalTitleList::getNextFocus(brls::FocusDirection direction, brls::View *oldFocus) {
         if (direction == brls::FocusDirection::LEFT)
             if (oldFocus == this->getChildren()[0]->view)
                 return this->getParent()->getParent()->getNextFocus(direction, oldFocus);

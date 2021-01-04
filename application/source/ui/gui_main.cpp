@@ -919,7 +919,7 @@ namespace edz::ui {
         brls::TabFrame *rootFrame = new brls::TabFrame();
         rootFrame->setTitle("edz.name"_lang);
 
-        if (brls::Application::getThemeVariant() == brls::ThemeVariant::ThemeVariant_LIGHT)
+        if (brls::Application::getThemeVariant() == brls::ThemeVariant::LIGHT)
             rootFrame->setIcon("romfs:/assets/icon_edz_dark.png");
         else
             rootFrame->setIcon("romfs:/assets/icon_edz_light.png");
