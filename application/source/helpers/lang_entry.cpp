@@ -33,15 +33,22 @@ namespace edz {
         u64 languageCode;
         setGetLanguageCode(&languageCode);
         std::string overrideLanguage = GET_CONFIG(Settings.langCode);
+        std::string langjson{};
 
         // If override language hasn't been set yet, assume operating system default
         if (overrideLanguage == "")
+        {
             SET_CONFIG(Settings.langCode, "auto");
+            langjson = std::string("romfs:/lang/") + (char*)(&languageCode) + ".json";
+        }
+        else
+             langjson = langjson = "romfs:/lang/" + overrideLanguage + ".json";;
 
         nlohmann::json json;
-        std::ifstream langFile("romfs:/lang/" + (overrideLanguage == "auto" ? std::string(reinterpret_cast<char*>(&languageCode)) : overrideLanguage) + ".json");
+        std::ifstream langFile;
 
         // If no localization file for the selected language was found, default to en-US (American English)
+        langFile.open(langjson);
         if (!langFile.is_open())
             langFile.open("romfs:/lang/en-US.json");
         
