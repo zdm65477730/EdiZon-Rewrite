@@ -1,90 +1,89 @@
-# EdiZon 4.0.0 Rewrite features
+# EdiZon 4.0.0 重写的功能
 
-## General ideas
-- [ ] Better updater
-  - [ ] Choose between release and nightly version
-  - [ ] Update put cheats in stray cheats folder or download only cheats for games the user owns
-  - [ ] Download only save editors for games the player owns
-  - [X] Open source server part so people can host their own
-    - [ ] Multiple update servers support
-- [X] Via extra sysmodule, possibly map buttons to button sequences, multi buttons, etc? 
-
-## Main menu
-- [ ] Batch backup/restore button
-- [ ] Open cheat menu automatically if game is running
-  - [ ] Don't allow backup/restore/edit while a game is running
-  - [ ] ~~Allow overclocking config~~
-- [ ] Display info icons above game icon
-  - [ ] Running game
-  - [ ] Running with cheats
-  - [ ] Has save editor
-  - [ ] Beta save editor
+## 总体思路
+- [ ] 更好的更新器
+  - [ ] 在发布版本和夜间版本之间进行选择
+   -[ ] 更新将金手指文件放入对应的金手指文件夹中，或仅下载用户拥有的游戏的金手指文件
+   -[ ] 仅下载玩家拥有的游戏的存档编辑器
+   -[X] 开源服务器部分，因此人们可以托管自己的存档
+     -[ ] 多个更新服务器支持
+- [X] 通过额外的子模块，可能将按钮映射到按钮序列、多按钮等？
+## 主菜单
+- [ ] 批量备份与还原按钮
+- [ ] 如果游戏正在运行，则自动打开金手指菜单
+  - [ ] 不允许在游戏运行时进行备份、还原和编辑
+  - [ ] ~~允许超频配置~~
+- [ ] 在游戏图标上方显示信息图标
+  - [ ] 正在游戏
+  - [ ] 金手指
+  - [ ] 已有的存档编辑器
+  - [ ] Beta存档编辑器
   - [ ] ???
-- [ ] Status bar
-  - [ ] Time
-  - [ ] Battery percentage
-  - [ ] EdiZon version
-  - [ ] Connected to PC client
-  - [ ] Connected to the internet
-  - [ ] Notifications!
-    - [ ] Viewable in a separate menu
-- [X] All game list
-  - [ ] Different sorting options
-  - [X] Maybe different display styles?
-- [ ] Buttons
-  - [ ] Manual button
-  - [ ] Notifications button
-  - [ ] Credits button
-  - [ ] Updater button
-- [ ] Built-in Guide
-  - [ ] How does save backup/restore work?
-  - [ ] How does save editing work?
-  - [ ] How do cheats work?
-  - [ ] How to use the cheat engine?
-  - [ ] ~~How to use the overclocking service?~~
-  - [ ] **More in-depth guide in the Electron app**
+- [ ] 状态栏
+  - [ ] 时间
+  - [ ] 电池百分比
+  - [ ] EdiZon版本
+  - [ ] 已连接到PC客户端
+  - [ ] 已连接到互联网
+  - [ ] 通知！
+  - [ ] 在单独的菜单中可见
+- [X] 所有游戏清单
+  - [ ] 不同的排序选项
+  - [X] 也许有不同的显示样式？
+- [ ] 按钮
+  - [ ] 手动按钮
+  - [ ] 通知按钮
+  - [ ] 积分按钮
+  - [ ] 更新器按钮
+- [ ] 内置指南
+  - [ ] 存档备份与还原如何工作？
+  - [ ] 存档编辑如何工作？
+  - [ ] 金手指如何运作？
+  - [ ] 如何使用金手指引擎？
+  - [ ] ~~如何使用超频服务？~~
+  - [ ] **Electron应用中的更多深入指南**
 
-## Save file management
-- [ ] Backup/Restore of save files as usual
-- [ ] Upload/Download of save files to open source self hostable servers
-   - [ ] Upload of current save file and previously backed up save files
-   - [ ] Download and direct injecting of uploaded save files or saving for later
-- [ ] Swap current save file with backed up one
-- [ ] Batch backups + Restoring of batch backups
-- [ ] Optional description for backups 
-- [ ] Current save file displayed next to all backed up save files in list
-- [ ] Access to save files over USB/TCP via electron client
-- [ ] Wipe save file feature
-- [ ] Copy save file from one profile to another directly
+## 存档文件管理
+- [ ] 日常备份与还原保存文件
+- [ ] 上传和下载存档文件到开源可自托管的服务器
+   - [ ] 上载当前存档文件和之前备份的存档文件
+   - [ ] 下载并直接导入上传的存档文件，或保存以备后用
+- [ ] 替换当前存档文件并备份一份
+- [ ] 批量备份与批量还原备份
+- [ ] 备份的可选说明
+- [ ] 列表中所有备份的存档文件旁边显示当前存档文件
+- [ ] Electron客户端通过USB或TCP访问存档文件
+- [ ] 清除存档文件功能
+- [ ] 将存档文件从一个配置文件直接复制到另一个配置文件
 
-## Save file editing
-- [X] Editing using config and script files as before (Lua + Python)
-- [ ] Automatic save states before editing for easy revert back
-- [ ] Custom UIs using script files
-   - [ ] Custom button, text, images and widget layouts to fit every use case
-   - [ ] Allow complete access to all save files in the save file system
-   - [ ] Allow access to a folder on the SD card as well to load resources
-   - [ ] Allow access to the internet
-- [ ] Hex/Text view of save files on console
+## 存档文件编辑
+- [X] 像以前一样使用配置和脚本文件进行编辑 (Lua与Python)
+- [ ] 编辑前自动保存状态，以方便还原
+- [ ] 使用脚本文件的自定义UI
+   - [ ] 自定义按钮、文本、图像和小组件布局，以适应每个用例
+   - [ ] 允许完全访问存档文件系统中的所有存档文件
+   - [ ] 允许访问SD卡上的文件夹以及加载资源
+   - [ ] 允许访问互联网
+- [ ] 控制台上存档文件的十六进制或文本视图
 
-## Cheat management
-- [X] Display TID, PID and BID
-- [X] Memory layout view with better explainations
-- [X] Interface with dmnt:cht to select running cheats
-- [ ] `system_settings.ini` configuration option
-- [ ] Stray cheats folder
-- [ ] Cheat renaming to current buildID
-- [X] Proper error messages why cheats didn't get loaded
-- [ ] Limited on-console cheat engine
-  - [ ] Search types `==`, `!=`, `<=`, `>=`, `<` and `>`
-  - [ ] Data types `u8`, `u16`, `u32`, `u64`, `s8`, `s16`, `s32` and `s64`
-  - [ ] Memory Regions `HEAP`, `MAIN` and `HEAP+MAIN`
-- [ ] Full cheat finder through additional sysmodule + electron client over USB/TCP
-  - [X] Extract and launch sysmodule when needed
-  - [ ] Additional features to the above ones
+## 金手指管理
+- [X] 显示TID、PID和BID
+- [X] 内存布局视图有更好的解释
+- [X] 与dmnt:cht交互以选择运行金手指
+- [ ] `system_settings.ini` 配置选项
+- [ ] 任意指定位置的金手指文件夹
+- [ ] 金手指重命名为当前的buildID
+- [X] 正确的错误消息描述为何金手指未加载
+- [ ] 受控制台作弊引擎限制
+  - [ ] 搜索类型 `==`、`!=`、`<=`、`>=`、`<`和`>`
+  - [ ] 数据类型 `u8`、`u16`、`u32`、`u64`、`s8`、`s16`、`s32`和`s64`
+  - [ ] 内存区域 `HEAP`、`MAIN`和`HEAP+MAIN`
+- [ ] 通过附加的系统子模块与通过USB或TCP访问的Electron客户端的完整金手指查找器
+  - [X] 必要时提取并启动系统子模块
+  - [ ] 以上功能的附加功能
     - [ ] `SAME`, `DIFF`, `INC`, `DEC`, `A:B`
-    - [ ] `Find pointers`
-    - [ ] `Follow pointer`
-    - [ ] Direct memory read and writing in hex-editor style
-    - [ ] Watch window
-    - [ ] Memory breakpoints with conditionals
+    - [ ] `查找指针地址`
+    - [ ] `跟随指针地址`
+    - [ ] 十六进制编辑器风格的直接内存读写
+    - [ ] 观察窗口
+    - [ ] 有条件的内存断点

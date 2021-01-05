@@ -6,37 +6,37 @@
     <a href="https://travis-ci.com/WerWolv/EdiZon-Rewrite"><img src="https://travis-ci.com/WerWolv/EdiZon-Rewrite.svg?branch=master" alt="Build Status" /></a>
   </p>
 
-A Homebrew save file manager, editor, cheat engine, cheat creator and button sequence mapper for Horizon, the OS of the Nintendo Switch.
+具有存档文件管理器、编辑器、金手指引擎、金手指创建和Horizon（任天堂Switch的操作系统）按钮序列映射功能的自制软件。
 
-## Overview
+## 概述
 
-EdiZon consists of 6 different main functionalities.
+EdiZon包含6个主要功能如下
 
-  - **Save file management**
-    - Extraction of game saves.
-    - Injection of extracted game saves (Your own and your friends save files).
-    - Extraction and injection of all save files found on your device at once.
-    - Creations of save file systems when injecting a save file (No need to open every game first!)
-    - Automatic backups of all your save files and optionally uploading them to a remote server
-    - Uploading of savefiles directly to https://anonfile.com.
-    - Batch extraction of all save files of all games on the system.
-  - **Save file repositories**
-    - Open source server to host save file repositories online for everybody to access them
-    - Official repos for Mario Maker 2, 100% files and more
-  - **Save file editing**
-    - Easy to use, scriptable and easily expandable on-console save editing.
-      - Lua and Python script support.
-    - Built-in save editor updater.
-  - **On-the-fly memory editing**
-    - Cheat Engine like RAM editing.
-    - Freezing of values in RAM via Atmosphère's cheat module.
-    - Interface for loading, managing and updating Atmosphère cheats.
-    - Screen overlay to manage your cheats and modify your RAM without leaving the game you're playing
-  - **Virtual controllers**
-    - Map button combos and button press sequences to any joycon button
-    - Redirect controller inputs from your computer to the switch or vice versa
+  - **存档文件管理**
+    - 提取游戏保存档。
+    - 注入提取的游戏存档(您自己和您的朋友存档文件)。
+    - 一次提取并导入在设备上找到的所有存档文件。
+    - 导入存档文件时创建存档文件系统(无需先打开每个游戏！)
+    - 自动备份所有存档的文件，并可以选择将它们上传到远程服务器
+    - 将存档文件直接上传到https://anonfile.com。
+    - 批量提取系统上所有游戏的所有存档文件
+  - **存档文件库**
+    - 开源服务器可在线托管存档存档存储库，以供所有人访问
+    - Mario Maker 2的官方库，100％文件等
+  - **存档文件编辑**
+    - 在控制台存档编辑中易于使用，可编写脚本并易于扩展。
+      - Lua和Python脚本支持。
+    - 内置的存档编辑器更新程序。
+  - **动态内存编辑**
+    - 金手指引擎，例如RAM编辑。
+    - 通过Atmosphère的金手指模块冻结RAM中的值。
+    - 用于加载、管理和更新Atmosphère金手指文件的界面。
+    - 屏幕overlay插件，可管理金手指并修改RAM，而无需离开正在玩的游戏
+  - **虚拟控制器按钮映射**
+    - 按键组合和按键顺序可映射到任何joycon按键
+    - 将控制器输入从计算机重定向到Switch，反之亦然
 
-  All packed into one easy to use and easy to install Homebrew.
+  全部打包成一个易于使用和易于安装的自制软件。
 
 ## Images
 
@@ -45,53 +45,53 @@ EdiZon consists of 6 different main functionalities.
   <p align="center"><img src="https://raw.githubusercontent.com/WerWolv/EdiZon/master/assets/save_editor_2.jpg"></p>
   <p align="center"><img src="https://raw.githubusercontent.com/WerWolv/EdiZon/master/assets/ram_editor.jpg"></p>
 
-## Save editor Config and Script files
+## 存档编辑器配置和脚本文件
 
-  To download working Editor Config and Editor Script files, visit [this repository](https://github.com/WerWolv/EdiZon_ConfigsAndScripts/tree/master)
+  要下载有效的Editor Config和Editor Script文件，请访问 [库](https://github.com/WerWolv/EdiZon_ConfigsAndScripts/tree/master)
 
-  Check out our [Wiki page](https://github.com/WerWolv/EdiZon/wiki) for more information on how to build your own Editor Config and Editor Script files.
+  查看我们的 [Wiki页面](https://github.com/WerWolv/EdiZon/wiki) 获取更多有关如何构建自己的Editor Config和Editor Script文件的信息。
 
-## How to install
+## 如何安装
 
-  1. Download the latest release from the [GitHub release page](https://github.com/WerWolv/EdiZon/releases/latest).
-  2. Unpack the downloaded zip file, put the files on your Nintendo Switch's SD card and let the folders merge.
-  3. Use a free open source CFW like [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) to launch the hbmenu and start EdiZon from there.
-     1. If you want to use the cheat manager you absolutely have to use [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) as only their cheat service is supported.
-     2. For the best experience, open the `/atmosphere/system_settings.ini` file and change `dmnt_cheats_enabled_by_default = u8!0x1` to `dmnt_cheats_enabled_by_default = u8!0x0`.
+  1. 从以下位置下载最新发行版本 [GitHub发行页面](https://github.com/WerWolv/EdiZon/releases/latest).
+  2. 解压缩下载的zip文件，将文件放在Nintendo Switch的SD卡上，然后覆盖文件夹。
+  3. 使用免费的开源CFW，例如 [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere)，启动hbmenu并从此处启动EdiZon
+     1. 如果您想使用金手指管理器，则必须使用 [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) 因为仅支持他们的金手指服务。
+     2. 为了获得最佳体验，请打开文件 `/atmosphere/system_settings.ini` 并修改  `dmnt_cheats_enabled_by_default = u8!0x1` 为 `dmnt_cheats_enabled_by_default = u8!0x0`.
 
 
-## How to compile
+## 如何编译
 
-  1. Clone the EdiZon repo to your computer using `git clone https://github.com/WerWolv/EdiZon --recurse-submodules`.
-  2. Download and install devkitA64. It comes bundled with the [devkitPro](https://devkitpro.org) toolchain.
-  3. Use the pacman package manager that comes with devkitPro to download and install libnx, the switch portlibs (`switch-portlibs`), the switch OpenGL libs (`switch-glfw`, `switch-mesa` and `switch-glm`).
-  4. The rest of the compilation works using the `make` command. Type `make application` to build only EdiZon, `make sysmodule` to build only the companion sysmodule or just `make` to build everything.
-  5. If you want to use the debug utilities built into the makefile, you also need `python3` and `lftp` installed on your computer and [sys-ftpd](https://github.com/jakibaki/sys-ftpd) installed on your Switch.
+  1. 使用 `git clone https://github.com/WerWolv/EdiZon --recurse-submodules` 将EdiZon存储库克隆到您的计算机。
+  2. 下载并安装devkitA64。它与 [devkitPro](https://devkitpro.org) 工具链打包在一起.
+  3. 使用devkitPro附带的pacman软件包管理器下载并安装libnx、Switch protlibs (`switch-portlibs`)、Switch OpenGL库 (`switch-glfw`、`switch-mesa`与`switch-glm`).
+  4. 使用make命令来执行剩余的编译工作。键入`make application`以仅构建EdiZon，键入`make sysmodule`以仅构建配套的系统子模块，或键入`make`以构建所有内容。
+  5. 如果要使用内置在makefile中的调试实用程序，则还需要在计算机上安装`python3`和`lftp`以及安装[sys-ftpd][sys-ftpd](https://github.com/jakibaki/sys-ftpd)到您的Switch机器里。
 
 ## Discord
 
-  For support with the usage of EdiZon or the creation of save editor configs and scripts, feel free to join the EdiZon server on Discord: https://discord.gg/qyA38T8
+  要获得有关使用EdiZon或创建存档编辑器配置和脚本的支持，请随时加入Discord上的EdiZon服务器：https://discord.gg/qyA38T8
 
-## Credits
+## 致敬
 
-  Thanks to...
+  感谢...
 
-  - [devkitPro](https://devkitpro.org) for their amazing toolchain!
-  - [SwitchBrew](https://switchbrew.org/) for the [Homebrew Launcher](https://github.com/switchbrew/nx-hbmenu) GUI and shared font code.
-  - [jakibaki](https://github.com/jakibaki) for the massive help with the implementation of RAM editing and sys-netcheat which was used as inspiration.
-  - [averne](https://github.com/averne) for their amazing research around overlay drawing and the implementation of the overlay drawing code
-  - [SciresM](https://github.com/SciresM) for the aarch64 hardware accelerated SHA256 code, libstratosphere, their implementation of the Atmosphère cheat engine and their support during development.
-  - [onepiecefreak](https://github.com/onepiecefreak3) for generally being helpful during development
-  - [Ac_K](https://github.com/AcK77) for help with the server side update scripts, the EdiZon save website and reverse engineering of IPC calls.
-  - **kardch** for the beautiful current icon.
-  - **bernv3** for the beautiful old icon.
-  - **All save editor and cheat creators** for bringing this project to life!
+  - [devkitPro](https://devkitpro.org) 贡献令人惊叹的工具链！
+  - [SwitchBrew](https://switchbrew.org/) [Homebrew Launcher](https://github.com/switchbrew/nx-hbmenu) 贡献GUI和共享字体代码
+  - [jakibaki](https://github.com/jakibaki) 为实现RAM编辑和sys-netcheat提供了巨大的帮助并受其启发。
+  - [averne](https://github.com/averne) 他们对overlay图和代码的实现进行了惊人的研究。
+  - [SciresM](https://github.com/SciresM) 贡献支持aarch64硬件加速的SHA256代码、libstratosphere、Atmosphère金手指引擎的实现以及提供开发过程中的支持。
+  - [onepiecefreak](https://github.com/onepiecefreak3) 在开发过程中通常会有所帮助
+  - [Ac_K](https://github.com/AcK77) 提供服务器端更新脚本的帮助、EdiZon存档网站以及堆IPC调用的逆向工程。
+  - **kardch** 当前软件使用的漂亮的图标。
+  - **bernv3** 之前软件使用的漂亮的图标。
+  - **All save editor and cheat creators** 使这个项目进入到了大家的生活！
 
   <br>
 
-  - [nlohmann](https://github.com/nlohmann) for their great json library.
-  - [Lua](https://www.lua.org/) for their scripting language.
-  - [Python](https://www.python.org/) and [nx-python](https://github.com/nx-python) for their scripting language respectively their python port to the switch.
+  - [nlohmann](https://github.com/nlohmann) 提供了很棒的json库。
+  - [Lua](https://www.lua.org/) 提供了脚本语言。
+  - [Python](https://www.python.org/) 和 [nx-python](https://github.com/nx-python) 提供了脚本语言。
 
 
   <br>

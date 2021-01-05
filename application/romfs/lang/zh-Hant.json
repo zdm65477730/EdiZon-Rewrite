@@ -10,7 +10,7 @@
 
     "edz.widget.integer.title"      : "輸入一個數值",
     "edz.widget.integer.subtitle"   : "這將是此屬性的新值。",
-    "edz.widget.string.title"       : "輸入一些文字",
+    "edz.widget.string.title"       : "輸入一些文本",
     "edz.widget.string.subtitle"    : "這將是此屬性的新文本。",
     "edz.widget.boolean.on"         : "開",
     "edz.widget.boolean.off"        : "關",

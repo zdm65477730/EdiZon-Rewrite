@@ -150,87 +150,87 @@ EdiZon为开发人员提供了一个统一的界面，以在其中构建存档�
 | `fileNameRegex`  | 正则字符串，用来匹配由EdiZon编辑的存档文件。                                                             | `filename\\.sav`                         |
 | `scriptLanguage` | 用于编辑存档文件的脚本语言。                                                                            | `python` 或 `lua`                         |
 | `script`         | 用来编辑保存文件的脚本文件名。                                                                          | `json.lua`                                |
-| `items`          | 这是将在编辑器界面中显示的配置项目的列表。 每一项将用于编辑保存文件中的一个属性。                            | 参见 `小部件元数据`                        |
+| `items`          | 这是将在编辑器界面中显示的配置项目的列表。 每一项将用于编辑保存文件中的一个属性。                            | 参见 `小组件元数据`                        |
 
-### 小部件元数据
+### 小组件元数据
 
-Widgets are the list items in the editor window that will communicate with the script and ultimately edit the save file depending on the user's input.
+窗口小组件是编辑器窗口中的列表项，它们将与脚本进行通信，并最终根据用户的输入来编辑存档文件。
 
-| Key name        | Description | Example values |
-|-----------------|-------------|----------------|
-| `name`          | The name of the property | `Coin count` |
-| `description`   | A small description about what this widget edits | `The amount of golden coins the player has.` |
-| `category`     | The name of the category this widget will be sorted in. | `Collectibles` |
-| `args`          | Arguments sent to the script file when this widget gets used | See `Arguments` |
-| `widget`        | The widget dependant metadata | See `Widget dependant metadata` |
+| 键名            | 描述                                   | 示例值                |
+|-----------------|---------------------------------------|-----------------------|
+| `name`          | 属性名称                               | `币数`                |
+| `description`   | 关于此小组件编辑内容的简短描述           | `玩家拥有的金币数量。` |
+| `category`      | 该小组件将按类别名排序。                | `收藏品`               |
+| `arguments`     | 使用此窗口小组件时，传递给脚本文件的参数  | 参见 `参数`            |
+| `widget`        | 小组件依赖元数据                        | 参见 `小组件依赖元数据` |
 
-### Arguments
+### 参数
 
-These key-value-pairs will be sent to the script whenever the user interacts with a widget. These can be used to tell the script what address to modify, what property to change or the size or type of the value that will get edited. The names of the argument keys can be any string that fits the script's needs. Values can be `numbers`, `floats`, `strings` or `booleans`. Lists, json objects and null will cause the arguments to not be passed to the script and therefor being treated as undefined.
+每当用户与窗口小组件交互时，这些键值对将传递到脚本。这些参数用于告诉脚本要修改的地址，要更改的属性或要编辑的值的大小或类型。参数键的名称可以是任何适合脚本需求的字符串。值可以是 `数字`、`浮点数`、`字符串`或`布尔值`。列表、json对象和null将使得参数不会传递到脚本，因此被视为未定义。
 
-**Both the keys and the values inside the arguments object are user defined and can be set to whatever is useful for the script.**
+**参数对象中的键和值都是用户定义的，可以设置为对脚本有用的任何值**
 
-### Widget dependent metadata
+### 小组件依赖元数据
 
-There are multiple different types of widgets that can be used to modify data. The available types are `int`, `bool`, `string`, `list`, `slider`, `progress` and `comment` which are the only valid values the `type` value can be set to. Any other one will cause the widget to not load. Dependent on the value `type` was set to, EdiZon will expect different parameters to be set.
+有多种不同类型的小组件可用于修改数据。可用的类型有：`int`、`bool`、`string`、`list`、`slider`、`progress`和`comment`，它们是`type`值能被设置有效值的类型。其他任何类型都将导致窗口小组件无法加载。根据设置的`type`值，EdiZon将会设置不同的参数。
 
-#### Integer Widget
+#### 整形小组件
 
-A widget that will open the keyboard when selected and expects a number to be entered by the user. The script won't be notified when the user just closes the keyboard.
+该小组件，将在选定时打开键盘，并等待用户输入整数。当用户仅关闭键盘并没有修改数据时，不会传递给脚本。
 
-| Key name        | Description | Example values |
-|-----------------|-------------|----------------|
-| `minValue`      | The minimum value this widget can be set to. Values lower than it will be capped to `minValue`. | `0` |
-| `maxValue`      | The maximum value this widget can be set to. Values higher than it will be capped to `maxValue` | `9999` |
+| 键名            | 描述                                                   | 示例值  |
+|-----------------|--------------------------------------------------------|--------|
+| `minValue`      | 此小组件可以设置的最小值。低于下限的值会限制到 `minValue`。| `0`    |
+| `maxValue`      | 此小组件可以设置的最大值。高于上限的值会限制到 `maxValue`。| `9999` |
 
-#### Boolean Widget
+#### 布尔小组件
 
-A widget that can have a ON and a OFF state which gets toggled when selected. If the value reported by the script is neither `onValue` nor `offValue`, EdiZon will interpret this as the property being turned off and will set the value to `onValue` the next time the user selects the widget.
+具有'开'和'关'状态的窗口小组件，该窗口小组件在选定时切换值。如果脚本获取的值既不是`onValue`也不是`offValue`，那么EdiZon会将其解释为'关'的属性，并在用户下次选择小组件时将其设置为`onValue`。
 
-| Key name        | Description | Example values |
-|-----------------|-------------|----------------|
-| `onValue`       | The value that will be sent to the script when the on-state is selected  | `1234` |
-| `offValue`      | The value that will be sent to the script when the off-state is selected | `1000` |
+| 键名            | 描述                        | 示例值 |
+|-----------------|----------------------------|--------|
+| `onValue`       | 选择开状态时将传递到脚本的值  | `1234` |
+| `offValue`      | 选择关状态时将传递到脚本的值  | `1000` |
 
-#### String Widget
+#### 字符串小组件
 
-A widget that will open the keyboard when selected and expects a number to be entered by the user. The script won't be notified when the user just closes the keyboard.
+该小组件，将在选定时打开键盘，并等待用户输入数字。当用户仅关闭键盘时，不会传递值给脚本。
 
-| Key name        | Description | Example values |
-|-----------------|-------------|----------------|
-| `minLength`      | The minimum length of the string this widget can be set to. If a shorter string is entered, the input will be ignored and the script won't get notified. | `0` |
-| `maxLength`      | The maximum length of the string this widget can be set to. The software keyboard will prevent the user to enter a string longer than this | `32` |
+| 键名            | 描述                                                                                    | 示例值 |
+|-----------------|----------------------------------------------------------------------------------------|--------|
+| `minLength`     | 此小组件可以设置的字符串的最小长度。如果输入了较短的字符串，则输入将被忽略，并且不会传递给脚本。| `0`    |
+| `maxLength`     | 此小组件可以设置的字符串的最大长度。软件键盘将阻止用户输入比此更长的字符串。                  | `32`   |
 
-#### List Widget
+#### 列表小组件
 
-A widget that will display a dropdown menu when selected. This allows for naming an unlimited amount of values and displaying them in a list to present to the user. Every string in the keys list will be mapped to the value at the same index in the values list therefor the keys list and the values list have to be the same length. Values can be `numbers`, `floats`, `booleans` and `strings` but they should all be of the same type.
+选择时将显示下拉菜单的小组件。这允许命名无限数量的值，并将它们显示在列表中以呈现给用户。键列表中的每个字符串都将映射到值列表中相同索引处的值，因此键列表和值列表的长度必须相同。值可以是`numbers`、`floats`、`booleans`和`strings`类型，但所有值都应属于对应的类型。
 
-| Key name        | Description | Example values |
-|-----------------|-------------|----------------|
-| `keys`          | The names displayed to the user. | `[ "Value 1", "Value 2", "Value 3", "Value 4"]` |
-| `values`        | The values sent to the script. | `[ 555, 1337, 69, 420 ]` |
+| 键名            | 描述              | 示例值                                          |
+|-----------------|------------------|-------------------------------------------------|
+| `keys`          | 显示给用户的名称。 | `[ "Value 1", "Value 2", "Value 3", "Value 4"]` |
+| `values`        | 传递给脚本的值。   | `[ 555, 1337, 69, 420 ]`                        |
 
-**TODO: slider**</br>
-**TODO: progressbar**
+**TODO：摇杆**</br>
+**TODO: 进度条**
 
-#### Comment Widget
+#### 注释小组件
 
-A widget that will insert some text in the widget list used to give additional information about anything in the editor screen.
+该小组件，它将在小部件列表中插入一些文本，该文本用于提供编辑器屏幕中任何内容的附加信息。
 
-| Key name        | Description | Example values |
-|-----------------|-------------|----------------|
-| `comment`       | The text that will be displayed. | `Make sure that the tutorial has been completed before enabling this option.`  |
+| 键名            | 描述                        | 示例值                              |
+|-----------------|----------------------------|-------------------------------------|
+| `comment`       | 将显示的注释文本。           | `在启用此选项之前，请确保教程已完成。` |
 
-## Script Files
+## 脚本文件
 
-Save editor scripts can be either written in Lua or Python. EdiZon bundles Lua version 5.3.5 and Python 3.8 together with the entirety of it's standard library. If needed, extra libraries can be added and imported in the save editing script.
+存档编辑器脚本可以用Lua或Python编写。EdiZon将Lua版本5.3.5和Python 3.8与其完整的标准库打包在一起。如果需要，可以在存档编辑脚本中添加和导入其他库。
 
-### Hello World script
+### Hello World 脚本
 
 #### Lua
 
-!!! Note
-    The `edizon` module does **not** have to be imported in lua. It's a publicly registered module that will be loaded automatically and will always be called `edizon`.
+!!! 注意
+    `edizon`模块**不是**必须在lua中导入。它是一个自动加载的公开注册的模块，并一致被称为`edizon`。
 
 ```lua
 -- Load the current save data in as a byte array --
@@ -267,8 +267,8 @@ end
 
 #### Python
 
-!!! Note
-    The `edizon` module does have to be imported manually on Python.
+!!! 注意
+    `edizon`模块必须在Python里手动导入。
 
 ```python
 # Import edizon module
@@ -302,37 +302,37 @@ def getModifiedSaveFileData():
     return saveFileBuffer
 ```
 
-### _**Functions called by EdiZon**_
+### _**EdiZon调用的函数**_
 
-#### `Global space`
+#### `全局空间`
 
-Before EdiZon calls any functions in the script, the code in the global space will be executed. This is where potential save file parsing should be done as the global space will only be executed once on startup.
+EdiZon在脚本中调用任何函数之前，将执行全局空间中的代码。在这里应该进行悄无声息的存档文件解析，因为全局空间在启动时只会执行一次。
 
-!!! Warning
-    Do **not** parse the whole save data in the `getValue` or `setValue` function! These functions will get executed whenever the user interacts with the editor interface. Parsing the save data every time this happens will lag out the interface and should not be done.
+!!! 警告
+    请**不要**在`getValue`或`setValue`函数中解析整个存档数据！每当用户与编辑器界面交互时，这些函数就会执行。每当发生这种情况时，解析存档的数据都会拖慢接口，因此不应该这样做。
 
 #### `getValue( ) -> int | float | boolean | string`
 
-This function gets called when EdiZon wants to display the current value of a property in the editor interface. It should load the current arguments from the config file and use them to load the correct value from the save data. This value then shall be sent to EdiZon by returning it from the function (`return value`). This value can be of type `int`, `float`, `boolean` or `string` dependant on the config file and the widget used.
+当EdiZon想要在编辑器界面中显示属性的当前值时，将调用此函数。它应该从配置文件中加载当前参数，并使用它们从存档数据中加载正确的值。然后通过函数的(`返回值`)将其传递给EdiZon。该值可以是`int`、`float`、`boolean`或`string`类型，具体取决于配置文件和所使用的小组件。
 
 #### `setValue( int | float | boolean | string )`
 
-This function gets called when the user interacts with any widget and therefor a value in the save data should be updated. This value will be passed in as the first and only argument of the function and can be of type `int`, `float`, `boolean` or `string` dependant on the config file and the widget used.
+当用户与任何窗口小组件交互时，将调用此函数，因此存档数据中的值会被更新。该值将作为函数的第一个也是唯一的参数传入，并且可以是`int`、`float`、`boolean`或`string`类型，具体取决于配置文件和所使用的小组件。
 
 #### `getModifiedSaveFileData( ) -> byte[]`
 
-This function will get called as soon as the user decides that they are happy with the modifications and hit `Apply` in the interface. It should re-encode the parsed save data, potentially recalculate checksums and do anything necessary for the save data to be readable again by the game. Once this is done it should return the data from the function back to EdiZon (`return saveDataBuffer`). Only byte arrays can be returned from this function.
+用户确认所修改的数据后，并在界面中点击`应用`后，就会立即调用此函数。它会对解析后的存档数据进行重新编码，可能会重新计算校验和，并为游戏重新读取存档数据做任何必要的事情。一旦完成，它会将数据从函数返回给EdiZon(`return saveDataBuffer`)。此函数只能返回字节数组。
 
-### _**EdiZon functions callable by the script**_
+### _**脚本可调用的EdiZon函数**_
 
 #### `edizon.getDataAsBuffer( ) -> byte[]`
 
-This function returns the currently loaded save data as a byte array. Useful for binary save formats.
+此函数将当前加载的存档数据作为字节数组返回。对于二进制存档格式很有用。
 
 #### `edizon.getDataAsString( ) -> string`
 
-This function returns the currently loaded save data as a string. Useful for plain text save formats.
+此函数以字符串形式返回当前加载的存档数据。对于纯文本保存格式很有用。
 
 #### `edizon.getArgument( string ) -> int | float | boolean | string`
 
-Every time the user interacts with a widget, EdiZon loads the arguments of that widget from the config and puts them into the script engine. This function then can be used to access these argument values based on their names. Like this the script can know what value should get edited and react accordingly.
+每次用户与窗口小组件进行交互时，EdiZon都会从配置中加载该窗口小组件的参数，并将其传递给脚本引擎。然后，可以使用此函数基于它们的名称访问这些参数值。这样，脚本可以知道应编辑哪些值并做出相应的反应。
