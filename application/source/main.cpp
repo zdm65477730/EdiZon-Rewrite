@@ -137,6 +137,7 @@ EResult createFolderStructure() {
 }
 
 int main(int argc, char *argv[]) {
+    brls::i18n::loadTranslations();
     brls::Logger::setLogLevel(VERBOSE_LOG_OUTPUT ? brls::LogLevel::DEBUG : brls::LogLevel::ERROR);
 
     // Try to initialize all services
