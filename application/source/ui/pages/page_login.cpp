@@ -84,7 +84,7 @@ namespace edz::ui::page {
             brls::Application::popView();
         });
 
-        this->registerAction("Back", brls::Key::B, [this] { return this->onCancel(); });
+        this->registerAction("edz.page.login.back"_lang, brls::Key::B, [this] { return this->onCancel(); });
     }
 
     PageLogin::~PageLogin() {

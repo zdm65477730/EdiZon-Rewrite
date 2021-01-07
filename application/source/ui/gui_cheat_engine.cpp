@@ -396,7 +396,7 @@ namespace edz::ui {
         this->m_rootFrame = new brls::ThumbnailFrame();
         this->m_rootFrame->setTitle("edz.gui.cheatengine.title"_lang);
 
-        this->m_rootFrame->registerAction("Memory View", brls::Key::X, [this]() {
+        this->m_rootFrame->registerAction("edz.gui.cheatengine.memoryview"_lang, brls::Key::X, [this]() {
             auto regionSelection = new brls::Dialog("edz.gui.hexeditor.dialog"_lang);
 
             regionSelection->addButton("edz.gui.cheatengine.scanregion.heap"_lang, [this, regionSelection](brls::View *view) {
@@ -420,7 +420,7 @@ namespace edz::ui {
             return true;
         });
 
-        this->m_rootFrame->registerAction("Reset Search", brls::Key::MINUS, [this]() {
+        this->m_rootFrame->registerAction("edz.gui.cheatengine.clear"_lang, brls::Key::MINUS, [this]() {
             if (this->m_selectedSearchLayer == SearchLayer::KnownSecondary) {
                 this->m_nextSearchLayer = SearchLayer::KnownPrimary;
                 Gui::runLater([this]{ brls::Application::giveFocus(this->m_rootFrame); }, 10);
@@ -466,7 +466,7 @@ namespace edz::ui {
             return true;
         });
 
-        this->m_rootFrame->registerAction("Ingame View", brls::Key::Y, []() {
+        this->m_rootFrame->registerAction("edz.gui.cheatengine.ingameview"_lang, brls::Key::Y, []() {
             Gui::changeTo<GuiGameImage>();
 
             return true;

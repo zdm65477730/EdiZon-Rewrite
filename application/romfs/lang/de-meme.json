@@ -14,6 +14,7 @@
     "edz.widget.boolean.on"         : "Angeschaltet",
     "edz.widget.boolean.off"        : "Ausgeschaltet",
 
+    "edz.gui.main.back"                           : "Rückkehr",
     "edz.gui.main.titles.tab"                     : "Titulierung",
     "edz.gui.main.running.tab"                    : "Momentane Titulierung",
     "edz.gui.main.repos.tab"                      : "Speicherdaten Diener",
@@ -70,10 +71,13 @@
     "edz.page.login.title"         : "WechselSchummlerInformationensammlung",
     "edz.page.login.hint"          : "Gib deine WechselSchummlerInformationensammlung Logindaten ein, um Zugriff auf automatische Ausgaben, Schummlerherunterlader und Gedächtnishochlader zu erhalten. Bitte besuch https://cheatslips.com, um einen Account zu erstellen",
     "edz.page.login.login"         : "Anmelden",
+    "edz.page.login.back"          : "Rückkehr",
     "edz.page.login.email"         : "Elektronische Post",
     "edz.page.login.email.help"    : "Bitte gib deine WechselSchummlerInformationensammlung E-Post-Addresse ein",
     "edz.page.login.password"      : "Passwort",
     "edz.page.login.password.help" : "Bitte gib dein WechselSchummlerInformationensammlung Passwort ein",
+
+    "edz.page.fullscreen.image.back"     : "Rückkehr",
 
     "edz.dialog.okay"   : "Tja",
     "edz.dialog.yes"    : "Jap",

@@ -7,7 +7,6 @@
     "edz.cheatslips.name" : "Cheat Slips",
     "edz.patreon.name"    : "Patreon",
     "edz.debugmode"       : "调试模式",
-    "edz.back"            : "返回",
 
     "edz.widget.integer.title"      : "输入一个数值",
     "edz.widget.integer.subtitle"   : "这将是此属性的新值。",
@@ -16,6 +15,7 @@
     "edz.widget.boolean.on"         : "开",
     "edz.widget.boolean.off"        : "关",
 
+    "edz.gui.main.back"                             : "返回",
     "edz.gui.main.titles.tab"                       : "游戏",
     "edz.gui.main.running.tab"                      : "正在运行的游戏",
     "edz.gui.main.repos.tab"                        : "存档库",
@@ -94,6 +94,7 @@
     "edz.page.login.title"         : "Cheat Slips",
     "edz.page.login.hint"          : "输入您Cheat Slips的凭据，以访问自动更新、金手指文件下载和存档文件上传。创建帐户，请访问 https://cheatslips.com",
     "edz.page.login.login"         : "登录",
+    "edz.page.login.back"          : "返回",
     "edz.page.login.email"         : "邮件",
     "edz.page.login.email.help"    : "请输入您Cheat Slips的电子邮件地址",
     "edz.page.login.password"      : "密码",
@@ -102,6 +103,8 @@
 
     "edz.page.splash.error.ams" : "EdiZon依赖于Atmosphère的许多最新功能。请更新到大于或等于AMS %s的版本。\n按下 \uE0EF 退出",
     "edz.page.splash.error.mem" : "EdiZon依赖于多个不同的Applet才能正常运行。确保您的system_settings.ini为它们分配了足够的内存。\n按下 \uE0EF 退出",
+
+    "edz.page.fullscreen.image.back"     : "返回",
 
     "edz.dialog.okay"    : "好",
     "edz.dialog.yes"     : "是",
@@ -148,7 +151,8 @@
     "edz.gui.cheatengine.sidebar.search"            : "搜索",
     "edz.gui.cheatengine.sidebar.foundaddresses"    : "找到地址：%d",
 
-    "edz.gui.cheatengine.memoryview"                : "没存检索",
+    "edz.gui.cheatengine.memoryview"                : "内存视图",
+    "edz.gui.cheatengine.ingameview"                : "游戏视图",
     "edz.gui.cheatengine.foundaddresses"            : "找到地址",
     "edz.gui.cheatengine.clear"                     : "清除搜索",
 
@@ -187,8 +191,13 @@
     "edz.gui.cheatengine.scanregion.main"           : "主存储区",
     "edz.gui.cheatengine.scanregion.both"           : "堆和主存储区",
 
-    "edz.gui.hexeditor.title"       : "内存十六进制检索",
-    "edz.gui.hexeditor.dialog"      : "您要检查堆或主存储区吗？",
+    "edz.gui.hexeditor.title"           : "内存十六进制检索",
+    "edz.gui.hexeditor.dialog"          : "您要检查堆或主存储区吗？",
+    "edz.gui.hexeditor.perviouspage"    : "上一页",
+    "edz.gui.hexeditor.nextpage"        : "下一页",
+    "edz.gui.hexeditor.back"            : "返回",
+    "edz.gui.hexeditor.ok"              : "确认",
+    "edz.gui.hexeditor.goto"            : "跳转",
 
     "edz.element.titleinfo.name"        : "名称",
     "edz.element.titleinfo.author"      : "作者",
@@ -196,6 +205,8 @@
     "edz.element.titleinfo.programid"   : "程序ID",
     "edz.element.titleinfo.buildid"     : "编译ID",
     "edz.element.titleinfo.processid"   : "进程ID",
+
+    "edz.element.titlebutton.ok"        : "确认",
 
     "edz.fatal.service.init"        : "服务初始化期间发生错误。\n错误代码：",
     "edz.fatal.exception"           : "发生致命异常！",

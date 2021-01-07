@@ -953,7 +953,7 @@ namespace edz::ui {
         rootFrame->addTab("edz.gui.main.settings.tab"_lang, this->m_settingsList);
         rootFrame->addTab("edz.gui.main.about.tab"_lang, this->m_aboutList);
 
-        rootFrame->registerAction("edz.back"_lang, brls::Key::B, [](){ brls::Application::quit(); return true; });
+        rootFrame->registerAction("edz.gui.main.back"_lang, brls::Key::B, [](){ brls::Application::quit(); return true; });
 
         #if DEBUG_MODE_ENABLED
             rootFrame->setFooterText("edz.debugmode"_lang);

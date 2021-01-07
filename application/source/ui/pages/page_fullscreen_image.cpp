@@ -28,7 +28,7 @@ namespace edz::ui::page {
         this->m_image->setScaleType(brls::ImageScaleType::FIT);
         this->m_image->setParent(this);
 
-        this->registerAction("Back", brls::Key::B, [](){ brls::Application::popView(); return true; });
+        this->registerAction("edz.page.fullscreen.image.back"_lang, brls::Key::B, [](){ brls::Application::popView(); return true; });
     }
 
     PageFullscreenImage::~PageFullscreenImage() {
