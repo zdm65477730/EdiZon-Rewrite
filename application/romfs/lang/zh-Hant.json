@@ -5,8 +5,9 @@
     "edz.translator"    : "zdm65477730",
 
     "edz.cheatslips.name" : "Cheat Slips",
-    "edz.patreon.name"        : "Patreon",
-    "edz.debugmode"           : "調試模式",
+    "edz.patreon.name"    : "Patreon",
+    "edz.debugmode"       : "調試模式",
+    "edz.back"            : "返回",
 
     "edz.widget.integer.title"      : "輸入一個數值",
     "edz.widget.integer.subtitle"   : "這將是此屬性的新值。",

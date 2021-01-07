@@ -39,6 +39,7 @@ using namespace edz;
 
 EResult initServices() {
     // Already initialized by Borealis but also used in EdiZon: romfs, sockets, pl and set:sys
+    brls::i18n::loadTranslations();
 
     // Initialize Borealis (UI library)
     if (!brls::Application::init("Edizon"))
@@ -137,7 +138,6 @@ EResult createFolderStructure() {
 }
 
 int main(int argc, char *argv[]) {
-    brls::i18n::loadTranslations();
     brls::Logger::setLogLevel(VERBOSE_LOG_OUTPUT ? brls::LogLevel::DEBUG : brls::LogLevel::ERROR);
 
     // Try to initialize all services

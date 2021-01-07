@@ -5,8 +5,9 @@
     "edz.translator"    : "zdm65477730",
 
     "edz.cheatslips.name" : "Cheat Slips",
-    "edz.patreon.name"        : "Patreon",
-    "edz.debugmode"           : "调试模式",
+    "edz.patreon.name"    : "Patreon",
+    "edz.debugmode"       : "调试模式",
+    "edz.back"            : "返回",
 
     "edz.widget.integer.title"      : "输入一个数值",
     "edz.widget.integer.subtitle"   : "这将是此属性的新值。",
@@ -15,7 +16,7 @@
     "edz.widget.boolean.on"         : "开",
     "edz.widget.boolean.off"        : "关",
 
-    "edz.gui.main.titles.tab"                       : "Titles",
+    "edz.gui.main.titles.tab"                       : "游戏",
     "edz.gui.main.running.tab"                      : "正在运行的游戏",
     "edz.gui.main.repos.tab"                        : "存档库",
     "edz.gui.main.cheats.tab"                       : "金手指",
