@@ -205,11 +205,11 @@ namespace edz::ui::element {
 
             // Address list
             if (heapRegion.contains(this->m_address + currOffset))
-                currLine += hlp::formatString("[ 堆存储 + 0x%016lX ]", this->m_address + currOffset - heapRegion.baseAddress);
+                currLine += hlp::formatString("[ HEAP + 0x%016lX ]", this->m_address + currOffset - heapRegion.baseAddress);
             else if (mainRegion.contains(this->m_address + currOffset))
-                currLine += hlp::formatString("[ 主存储 + 0x%016lX ]", this->m_address + currOffset - mainRegion.baseAddress);
+                currLine += hlp::formatString("[ MAIN + 0x%016lX ]", this->m_address + currOffset - mainRegion.baseAddress);
             else
-                currLine += hlp::formatString("[ 基地址 + 0x%016lX ]", this->m_address + currOffset - baseRegion.baseAddress);
+                currLine += hlp::formatString("[ BASE + 0x%016lX ]", this->m_address + currOffset - baseRegion.baseAddress);
 
             // Padding
             currLine += "  ";
@@ -221,11 +221,11 @@ namespace edz::ui::element {
 
                 for (u8 i = 0; i < 2; i++) {
                     if (heapRegion.contains(potentialAddress[i])) {
-                        currLine += hlp::formatString("[  堆存储 + 0x%08lX  ] ", potentialAddress[i] - heapRegion.baseAddress);
+                        currLine += hlp::formatString("[  HEAP + 0x%08lX  ] ", potentialAddress[i] - heapRegion.baseAddress);
                         this->m_selectionType.push_back(SelectionType::ADDRESS);
                     }
                     else if (mainRegion.contains(potentialAddress[i])) {
-                        currLine += hlp::formatString("[  主存储 + 0x%08lX  ] ", potentialAddress[i] - mainRegion.baseAddress);
+                        currLine += hlp::formatString("[  MAIN + 0x%08lX  ] ", potentialAddress[i] - mainRegion.baseAddress);
                         this->m_selectionType.push_back(SelectionType::ADDRESS);
                     }
                     else {
@@ -285,15 +285,15 @@ namespace edz::ui::element {
             } else {
                 if (heapRegion.contains(returnStack[0])) {
                     currRegion = heapRegion;
-                    historyString += "堆存储";
+                    historyString += "HEAP";
                 }
                 else if (mainRegion.contains(returnStack[0])) {
                     currRegion = mainRegion;
-                    historyString += "主存储";
+                    historyString += "MAIN";
                 }
                 else {
                     currRegion = baseRegion;
-                    historyString += "基地址";
+                    historyString += "BASE";
                 }
             }
 
