@@ -50,12 +50,12 @@ namespace edz::ui {
                 currentOperation = Operation::Minus;
                 i++;
             }
-            else if (strncasecmp(&str[i], "edz.gui.cheatengine.scanregion.heap"_lang, 4) == 0) {
+            else if (strncasecmp(&str[i], "edz.gui.cheatengine.scanregion.heap"_lang.c_str(), 4) == 0) {
                 result += (HEAP * std::uint64_t(currentOperation));
                 i += 4;
                 currentOperation = Operation::None;
             }
-            else if (strncasecmp(&str[i], "edz.gui.cheatengine.scanregion.main"_lang, 4) == 0) {
+            else if (strncasecmp(&str[i], "edz.gui.cheatengine.scanregion.main"_lang.c_str(), 4) == 0) {
                 result += (MAIN * std::uint64_t(currentOperation));
                 i += 4;
                 currentOperation = Operation::None;
