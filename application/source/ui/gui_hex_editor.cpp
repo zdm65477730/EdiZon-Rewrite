@@ -50,12 +50,12 @@ namespace edz::ui {
                 currentOperation = Operation::Minus;
                 i++;
             }
-            else if (strncasecmp(&str[i], "HEAP", 4) == 0) {
+            else if (strncasecmp(&str[i], "edz.gui.cheatengine.scanregion.heap"_lang, 4) == 0) {
                 result += (HEAP * std::uint64_t(currentOperation));
                 i += 4;
                 currentOperation = Operation::None;
             }
-            else if (strncasecmp(&str[i], "MAIN", 4) == 0) {
+            else if (strncasecmp(&str[i], "edz.gui.cheatengine.scanregion.main"_lang, 4) == 0) {
                 result += (MAIN * std::uint64_t(currentOperation));
                 i += 4;
                 currentOperation = Operation::None;
@@ -163,7 +163,7 @@ namespace edz::ui {
                 addr_t newAddress = parseAddressString(str) & ~0x0F;
                 cheat::CheatManager::readMemory(newAddress, this->m_buffer, GuiHexEditor::HEX_EDITOR_SIZE);
                 editor->setDisplayAddress(newAddress); 
-            }, "Enter a expression", "Valid tokens are HEAP, MAIN, +, -, decimals and hexadecimals ( prefixed with 0x )");
+            }, "edz.gui.hexeditor.goto.input.expression"_lang, "edz.gui.hexeditor.goto.input.desc"_lang);
 
             return true;
         });

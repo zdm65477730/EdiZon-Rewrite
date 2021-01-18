@@ -61,12 +61,12 @@ namespace edz::ui {
     void GuiCheatEngine::createKnownPrimarySearchLayer(brls::LayerView *layerView) {
         auto *list = new brls::List();
 
-        this->m_knownPrimarySearchType   = new brls::SelectListItem("Search Type", { "Exactly...", "Greater than...", "Less than...", "Between...", "Unknown value..." }, 0);
-        this->m_knownPrimarySearchRegion = new brls::SelectListItem("Region", { "HEAP", "MAIN", "HEAP and MAIN" }, 0);
-        this->m_knownPrimaryDataType     = new brls::SelectListItem("Data Type", { "Unsigned", "Signed", "Floating Point" }, 0);
-        this->m_knownPrimaryValue        = new brls::IntegerInputListItem("Value", 0, "Set pattern to search for");
-        this->m_knownPrimarySize         = new brls::IntegerInputListItem("Size", 1, "Set search Size");
-        this->m_knownPrimaryAligned      = new brls::ToggleListItem("Aligned Search", true);
+        this->m_knownPrimarySearchType   = new brls::SelectListItem("edz.gui.cheatengine.scantype"_lang, { "edz.gui.cheatengine.scantype.eq"_lang, "edz.gui.cheatengine.scantype.gt"_lang, "edz.gui.cheatengine.scantype.lt"_lang, "edz.gui.cheatengine.scantype.btwn"_lang, "edz.gui.cheatengine.scantype.unk"_lang }, 0);
+        this->m_knownPrimarySearchRegion = new brls::SelectListItem("edz.gui.cheatengine.scanregion"_lang, { "edz.gui.cheatengine.scanregion.heap"_lang, "edz.gui.cheatengine.scanregion.main"_lang, "edz.gui.cheatengine.scanregion.both"_lang }, 0);
+        this->m_knownPrimaryDataType     = new brls::SelectListItem("edz.gui.cheatengine.valuetype"_lang, { "edz.gui.cheatengine.valuetype.unsigned"_lang, "edz.gui.cheatengine.valuetype.signed"_lang, "edz.gui.cheatengine.valuetype.floatingpoint"_lang }, 0);
+        this->m_knownPrimaryValue        = new brls::IntegerInputListItem("edz.gui.cheatengine.value"_lang, 0, "edz.gui.cheatengine.value.input.title"_lang);
+        this->m_knownPrimarySize         = new brls::IntegerInputListItem("edz.gui.cheatengine.size"_lang, 1, "edz.gui.cheatengine.size.title"_lang);
+        this->m_knownPrimaryAligned      = new brls::ToggleListItem("edz.gui.cheatengine.alignedsearch"_lang, true);
 
 
         this->m_knownPrimarySearchType->getValueSelectedEvent()->subscribe([this](s32 selection) {
@@ -172,11 +172,11 @@ namespace edz::ui {
     void GuiCheatEngine::createUnknownPrimarySearchLayer(brls::LayerView *layerView) {
         auto *list = new brls::List();
 
-        this->m_unknownPrimarySearchType   = new brls::SelectListItem("Search Type", { "Exactly...", "Greater than...", "Less than...", "Between...", "Unknown value..." }, 0);
-        this->m_unknownPrimarySearchRegion = new brls::SelectListItem("Region", { "HEAP", "MAIN", "HEAP and MAIN" }, 0);
-        this->m_unknownPrimaryDataType     = new brls::SelectListItem("Data Type", { "Unsigned", "Signed", "Floating Point" }, 0);
-        this->m_unknownPrimarySize         = new brls::IntegerInputListItem("Size", 1, "Set search Size");
-        this->m_unknownPrimaryAligned      = new brls::ToggleListItem("Aligned Search", true);
+        this->m_unknownPrimarySearchType   = new brls::SelectListItem("edz.gui.cheatengine.scantype"_lang, { "edz.gui.cheatengine.scantype.eq"_lang, "edz.gui.cheatengine.scantype.gt"_lang, "edz.gui.cheatengine.scantype.lt"_lang, "edz.gui.cheatengine.scantype.btwn"_lang, "edz.gui.cheatengine.scantype.unk"_lang }, 0);
+        this->m_unknownPrimarySearchRegion = new brls::SelectListItem("edz.gui.cheatengine.scanregion"_lang, { "edz.gui.cheatengine.scanregion.heap"_lang, "edz.gui.cheatengine.scanregion.main"_lang, "edz.gui.cheatengine.scanregion.both"_lang }, 0);
+        this->m_unknownPrimaryDataType     = new brls::SelectListItem("edz.gui.cheatengine.valuetype"_lang, { "edz.gui.cheatengine.valuetype.unsigned"_lang, "edz.gui.cheatengine.valuetype.signed"_lang, "edz.gui.cheatengine.valuetype.floatingpoint"_lang }, 0);
+        this->m_unknownPrimarySize         = new brls::IntegerInputListItem("edz.gui.cheatengine.size"_lang, 1, "edz.gui.cheatengine.size.title"_lang);
+        this->m_unknownPrimaryAligned      = new brls::ToggleListItem("edz.gui.cheatengine.alignedsearch"_lang, true);
 
 
         this->m_unknownPrimarySearchType->getValueSelectedEvent()->subscribe([this](s32 selection) {
@@ -284,16 +284,16 @@ namespace edz::ui {
         auto *table = new brls::Table();
 
 
-        table->addRow(brls::TableRowType::HEADER, "Known Value Search");
-        this->m_knownSecondaryFixedTableRowSearchType    = table->addRow(brls::TableRowType::BODY, "Search Type");
-        this->m_knownSecondaryFixedTableRowSearchRegion  = table->addRow(brls::TableRowType::BODY, "Search Region");
-        this->m_knownSecondaryFixedTableRowDataType      = table->addRow(brls::TableRowType::BODY, "Data Type");
-        this->m_knownSecondaryFixedTableRowSearchSize    = table->addRow(brls::TableRowType::BODY, "Size");
-        this->m_knownSecondaryFixedTableRowSearchAligned = table->addRow(brls::TableRowType::BODY, "Aligned");
+        table->addRow(brls::TableRowType::HEADER, "edz.gui.cheatengine.scantype.knowntype"_lang);
+        this->m_knownSecondaryFixedTableRowSearchType    = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.scantype"_lang);
+        this->m_knownSecondaryFixedTableRowSearchRegion  = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.scanregion"_lang);
+        this->m_knownSecondaryFixedTableRowDataType      = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.valuetype"_lang);
+        this->m_knownSecondaryFixedTableRowSearchSize    = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.size"_lang);
+        this->m_knownSecondaryFixedTableRowSearchAligned = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.alignedsearch"_lang);
 
-        this->m_knownSecondaryFoundAddresses    = new brls::ListItem("Found addresses");
-        this->m_knownSecondarySearchType        = new brls::SelectListItem("Search Type", { "Exactly...", "Greater than...", "Less than...", "Between..." }, 0);
-        this->m_knownSecondaryValue             = new brls::IntegerInputListItem("Value", 1, "Set pattern to search for");
+        this->m_knownSecondaryFoundAddresses    = new brls::ListItem("edz.gui.cheatengine.foundaddresses"_lang);
+        this->m_knownSecondarySearchType        = new brls::SelectListItem("edz.gui.cheatengine.scantype"_lang, { "edz.gui.cheatengine.scantype.eq"_lang, "edz.gui.cheatengine.scantype.gt"_lang, "edz.gui.cheatengine.scantype.lt"_lang, "edz.gui.cheatengine.scantype.btwn"_lang }, 0);
+        this->m_knownSecondaryValue             = new brls::IntegerInputListItem("edz.gui.cheatengine.value"_lang, 1, "edz.gui.cheatengine.value.input.title"_lang);
 
         this->m_knownSecondaryFoundAddresses->setValue("0");
 
@@ -330,15 +330,15 @@ namespace edz::ui {
         auto *table = new brls::Table();
 
 
-        table->addRow(brls::TableRowType::HEADER, "Unknown Value Search");
-        this->m_unknownSecondaryFixedTableRowSearchType    = table->addRow(brls::TableRowType::BODY, "Search Type");
-        this->m_unknownSecondaryFixedTableRowSearchRegion  = table->addRow(brls::TableRowType::BODY, "Search Region");
-        this->m_unknownSecondaryFixedTableRowDataType      = table->addRow(brls::TableRowType::BODY, "Data Type");
-        this->m_unknownSecondaryFixedTableRowSearchSize    = table->addRow(brls::TableRowType::BODY, "Size");
-        this->m_unknownSecondaryFixedTableRowSearchAligned = table->addRow(brls::TableRowType::BODY, "Aligned");
+        table->addRow(brls::TableRowType::HEADER, "edz.gui.cheatengine.scantype.unknowntype"_lang);
+        this->m_unknownSecondaryFixedTableRowSearchType    = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.scantype"_lang);
+        this->m_unknownSecondaryFixedTableRowSearchRegion  = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.scanregion"_lang);
+        this->m_unknownSecondaryFixedTableRowDataType      = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.valuetype"_lang);
+        this->m_unknownSecondaryFixedTableRowSearchSize    = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.size"_lang);
+        this->m_unknownSecondaryFixedTableRowSearchAligned = table->addRow(brls::TableRowType::BODY, "edz.gui.cheatengine.alignedsearch"_lang);
                 
-        this->m_unknownSecondaryFoundAddresses      = new brls::ListItem("Found addresses");
-        this->m_unknownSecondaryUnknownSearchType   = new brls::SelectListItem("Strategy", { "Value stayed the same", "Value changed", "Value Increased", "Value Decreased" }, 0);
+        this->m_unknownSecondaryFoundAddresses      = new brls::ListItem("edz.gui.cheatengine.foundaddresses"_lang);
+        this->m_unknownSecondaryUnknownSearchType   = new brls::SelectListItem("edz.gui.cheatengine.strategy"_lang, { "edz.gui.cheatengine.strategy.valueunchange"_lang, "edz.gui.cheatengine.strategy.valuechanged"_lang, "edz.gui.cheatengine.strategy.valueincreased"_lang, "edz.gui.cheatengine.strategy.valuedecreased"_lang }, 0);
 
         this->m_unknownSecondaryFoundAddresses->setValue("0");
 
@@ -373,7 +373,7 @@ namespace edz::ui {
                 cheat::CheatEngine::findPattern(this->m_pattern, this->m_patternSize, this->m_signedness, this->m_knownOperation, region, this->m_alignedSearch);
 */
             this->m_nextSearchLayer = SearchLayer::KnownSecondary;
-        }, "Searching title memory. This may take a while...");
+        }, "edz.gui.cheatengine.dialog.searching"_lang);
 
         return ResultSuccess;
     }
@@ -487,7 +487,7 @@ namespace edz::ui {
 
         this->m_rootFrame->setContentView(this->m_contentLayers);
 
-        this->m_rootFrame->getSidebar()->getButton()->setLabel("Search");
+        this->m_rootFrame->getSidebar()->getButton()->setLabel("edz.gui.cheatengine.sidebar.search"_lang);
         this->m_rootFrame->getSidebar()->getButton()->getClickEvent()->subscribe([this](brls::View *view) {
             Gui::runAsyncWithDialog([this] {
 
@@ -507,7 +507,7 @@ namespace edz::ui {
                         break;
                 }
 
-            }, "Searching memory. This might take a while...");
+            }, "edz.gui.cheatengine.dialog.searching"_lang);
         });
 
         this->m_pattern = new u8[1];

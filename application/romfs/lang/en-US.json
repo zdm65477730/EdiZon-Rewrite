@@ -5,8 +5,8 @@
     "edz.translator"    : "",
 
     "edz.cheatslips.name" : "Cheat Slips",
-    "edz.patreon.name"        : "Patreon",
-    "edz.debugmode"           : "Debug Mode",
+    "edz.patreon.name"    : "Patreon",
+    "edz.debugmode"       : "Debug Mode",
 
     "edz.widget.integer.title"      : "Enter a value",
     "edz.widget.integer.subtitle"   : "This will be the new value for this property.",
@@ -15,6 +15,7 @@
     "edz.widget.boolean.on"         : "On",
     "edz.widget.boolean.off"        : "Off",
 
+    "edz.gui.main.back"                             : "Back",
     "edz.gui.main.titles.tab"                       : "Titles",
     "edz.gui.main.running.tab"                      : "Running Title",
     "edz.gui.main.repos.tab"                        : "Save Repositories",
@@ -62,6 +63,7 @@
     "edz.gui.main.settings.header.generaloptions"   : "General options",
     "edz.gui.main.settings.header.titleoptions"     : "Title options",
     "edz.gui.main.settings.header.accountoptions"   : "Account options",
+    "edz.gui.main.settings.language.auto"           : "Auto",
     "edz.gui.main.settings.language"                : "Language",
     "edz.gui.main.settings.language.default"        : "Operating system default",
     "edz.gui.main.settings.pctl"                    : "Enable parential control checks",
@@ -93,6 +95,7 @@
     "edz.page.login.title"         : "Cheat Slips",
     "edz.page.login.hint"          : "Enter your Cheat Slips credentials to get access to automatic updates, cheat file downloading and save file uploading. To create an account, please visit https://cheatslips.com",
     "edz.page.login.login"         : "Login",
+    "edz.page.login.back"          : "Back",
     "edz.page.login.email"         : "Email",
     "edz.page.login.email.help"    : "Please enter your Cheat Slips email address",
     "edz.page.login.password"      : "Password",
@@ -101,6 +104,8 @@
 
     "edz.page.splash.error.ams" : "EdiZon depends on many of Atmosphère's latest features. Please update to a version greater than or equal to AMS %s.\nPress \uE0EF to exit",
     "edz.page.splash.error.mem" : "EdiZon depends on multiple different Applets in order to function properly. Make sure your system_settings.ini allocates enough memory for them.\nPress \uE0EF to exit",
+
+    "edz.page.fullscreen.image.back"     : "Back",
 
     "edz.dialog.okay"    : "Okay",
     "edz.dialog.yes"     : "Yes",
@@ -148,22 +153,36 @@
     "edz.gui.cheatengine.sidebar.foundaddresses"    : "Found Addresses: %d",
 
     "edz.gui.cheatengine.memoryview"                : "Memory View",
+    "edz.gui.cheatengine.ingameview"                : "Game View",
     "edz.gui.cheatengine.foundaddresses"            : "Found Addresses",
     "edz.gui.cheatengine.clear"                     : "Clear Search",
+    "edz.gui.cheatengine.strategy"                  : "Search Strategy",
+
+    "edz.gui.cheatengine.strategy.valueunchange"    : "Value Unchange",
+    "edz.gui.cheatengine.strategy.valuechanged"     : "Value Changed",
+    "edz.gui.cheatengine.strategy.valueincreased"   : "Value Increased",
+    "edz.gui.cheatengine.strategy.valuedecreased"   : "Value Decreased",
 
     "edz.gui.cheatengine.scantype"                  : "Scan Type",
     "edz.gui.cheatengine.valuetype"                 : "Value Type",
     "edz.gui.cheatengine.scanregion"                : "Scan Region",
     "edz.gui.cheatengine.value"                     : "Search Value",
+    "edz.gui.cheatengine.size"                      : "Search Value Size",
+    "edz.gui.cheatengine.alignedsearch"             : "Aligned Search",
     "edz.gui.cheatengine.fastmode"                  : "Fast Scanning Mode",
     "edz.gui.cheatengine.fastmode.desc"             : "If enabled, only aligned values will be searched",
 
+    "edz.gui.cheatengine.scantype.unknowntype"      : "Unknown Value Search",
+    "edz.gui.cheatengine.scantype.knowntype"        : "Known Value Search",
     "edz.gui.cheatengine.scantype.eq"               : "Exact Value",
     "edz.gui.cheatengine.scantype.gt"               : "Greater than...",
     "edz.gui.cheatengine.scantype.lt"               : "Less than ...",
     "edz.gui.cheatengine.scantype.btwn"             : "Value between ...",
     "edz.gui.cheatengine.scantype.unk"              : "Unknown initial value",
 
+    "edz.gui.cheatengine.valuetype.unsigned"        : "Unsigned",
+    "edz.gui.cheatengine.valuetype.signed"          : "Signed",
+    "edz.gui.cheatengine.valuetype.floatingpoint"   : "Floating Point",
     "edz.gui.cheatengine.valuetype.u8"              : "1 Byte ( Unsigned )",
     "edz.gui.cheatengine.valuetype.s8"              : "1 Bytes ( Signed )",
     "edz.gui.cheatengine.valuetype.u16"             : "2 Bytes ( Unsigned )",
@@ -180,14 +199,23 @@
     "edz.gui.cheatengine.value.input.title"         : "Enter a value to search for",
     "edz.gui.cheatengine.value.input.desc"          : "The cheat engine will search the title's memory for this value",
 
+    "edz.gui.cheatengine.size.title"                : "Set serach value size",
+
     "edz.gui.cheatengine.dialog.searching"          : "Searching memory. This might take a while...",
 
     "edz.gui.cheatengine.scanregion.heap"           : "HEAP Region",
     "edz.gui.cheatengine.scanregion.main"           : "MAIN Region",
     "edz.gui.cheatengine.scanregion.both"           : "HEAP and MAIN Region",
 
-    "edz.gui.hexeditor.title"       : "Hex Memory View",
-    "edz.gui.hexeditor.dialog"      : "Do you want to inspect the HEAP or MAIN region?",
+    "edz.gui.hexeditor.title"                       : "Hex Memory View",
+    "edz.gui.hexeditor.dialog"                      : "Do you want to inspect the HEAP or MAIN region?",
+    "edz.gui.hexeditor.perviouspage"                : "Previous Page",
+    "edz.gui.hexeditor.nextpage"                    : "Next Page",
+    "edz.gui.hexeditor.back"                        : "Back",
+    "edz.gui.hexeditor.ok"                          : "OK",
+    "edz.gui.hexeditor.goto"                        : "Goto",
+    "edz.gui.hexeditor.goto.input.expression"       : "Enter an expression",
+    "edz.gui.hexeditor.goto.input.desc"             : "Valid tokens are HEAP, MAIN, +, -, decimals and hexadecimals ( prefixed with 0x )",
 
     "edz.element.titleinfo.name"        : "Name",
     "edz.element.titleinfo.author"      : "Author",
@@ -195,6 +223,8 @@
     "edz.element.titleinfo.programid"   : "Program ID",
     "edz.element.titleinfo.buildid"     : "Build ID",
     "edz.element.titleinfo.processid"   : "Process ID",
+
+    "edz.element.titlebutton.ok"        : "OK",
 
     "edz.fatal.service.init"        : "An error occurred during service initialization.\nError code: ",
     "edz.fatal.exception"           : "A fatal exception occured!",

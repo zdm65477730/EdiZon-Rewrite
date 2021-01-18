@@ -728,7 +728,7 @@ namespace edz::ui {
         std::vector<std::string> langCodes, langNames;
 
         // Add default language option (Copies HOS settings)
-        langCodes.push_back("auto");
+        langCodes.push_back("edz.gui.main.settings.language.auto"_lang);
         langNames.push_back("edz.gui.main.settings.language.default"_lang);
 
         // Add all languages that have translations available
