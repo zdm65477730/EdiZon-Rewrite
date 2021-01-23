@@ -66,7 +66,7 @@ namespace edz::cheat {
                 /* s[i+1:j] is cheat name. */
                 const size_t cheat_name_len = std::min(j - i - 1, sizeof(currCheatDef->readable_name));
                 std::memcpy(currCheatDef->readable_name, &s[i+1], cheat_name_len);
-                currCheatDef->readable_name[cheat_name_len] = 0;
+                currCheatDef->readable_name[cheat_name_len] = '\0';
 
                 if (j - i - 1 > 0x3F)
                     CheatParser::s_debugInfo.parseResult |= ParseResult::WARN_NAME_TOO_LONG;
