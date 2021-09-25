@@ -32,7 +32,7 @@ namespace edz::ui {
             std::fill(thumbnailBuffer.begin(), thumbnailBuffer.end(), 0x00);
 
         auto gameImage = new brls::Image();
-        gameImage->setImageRGBA(thumbnailBuffer.data(), 1280, 720);
+        gameImage->setImage(thumbnailBuffer.data(), 1280 * 720 * 4);
 
         return new page::PageFullscreenImage(gameImage);
     }

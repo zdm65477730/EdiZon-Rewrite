@@ -116,7 +116,7 @@ namespace edz::save::edit {
 
                 if (jsonExists(fileDefinitions, "items"))
                     parseWidgets(fileDefinitions["items"], fileNum);
-                else throw json::parse_error::create(100, 0, "未指定小组件");
+                else throw json::parse_error::create(100, 0, "未指定小组件", configVersionMetadata);
 
                 fileNum++;
             }

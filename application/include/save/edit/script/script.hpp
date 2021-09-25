@@ -25,6 +25,7 @@
 #include <vector>
 #include <map>
 #include <memory>
+#include <optional>
 
 #include "ui/widgets/widget.hpp"
 

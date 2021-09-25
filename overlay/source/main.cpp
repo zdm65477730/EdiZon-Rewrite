@@ -196,7 +196,7 @@ public:
         auto cheatsItem = new tsl::elm::ListItem("金手指");
         auto statsItem  = new tsl::elm::ListItem("系统信息");
         cheatsItem->setClickListener([](s64 keys) {
-            if (keys & KEY_A) {
+            if (keys & HidNpadButton_A) {
                 tsl::changeTo<GuiCheats>();
                 return true;
             }
@@ -205,7 +205,7 @@ public:
         });
 
         statsItem->setClickListener([](s64 keys) {
-            if (keys & KEY_A) {
+            if (keys & HidNpadButton_A) {
                 tsl::changeTo<GuiStats>();
                 return true;
             }

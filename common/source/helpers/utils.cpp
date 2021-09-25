@@ -92,7 +92,7 @@ namespace edz::hlp {
         swkbdConfigSetBlurBackground(&config, true);
         swkbdConfigSetType(&config, SwkbdType_QWERTY);
         swkbdConfigSetStringLenMax(&config, maxStringLength);
-        swkbdConfigSetStringLenMaxExt(&config, 1);
+        swkbdConfigSetStringLenMin(&config, 1);
         swkbdConfigSetKeySetDisableBitmask(&config, SwkbdKeyDisableBitmask_Percent | SwkbdKeyDisableBitmask_ForwardSlash | SwkbdKeyDisableBitmask_Backslash);
 
         char buffer[maxStringLength + 1] = { 0 };
@@ -121,7 +121,7 @@ namespace edz::hlp {
         swkbdConfigSetBlurBackground(&config, true);
         swkbdConfigSetType(&config, SwkbdType_Normal);
         swkbdConfigSetStringLenMax(&config, maxStringLength);
-        swkbdConfigSetStringLenMaxExt(&config, 1);
+        swkbdConfigSetStringLenMin(&config, 1);
 
         char buffer[maxStringLength + 1];
 
@@ -151,7 +151,7 @@ namespace edz::hlp {
         swkbdConfigSetStringLenMax(&config, maxStringLength);
         swkbdConfigSetLeftOptionalSymbolKey(&config, leftButton.c_str());
         swkbdConfigSetRightOptionalSymbolKey(&config, rightButton.c_str());
-        swkbdConfigSetStringLenMaxExt(&config, 1);
+        swkbdConfigSetStringLenMin(&config, 1);
         swkbdConfigSetKeySetDisableBitmask(&config, SwkbdKeyDisableBitmask_At | SwkbdKeyDisableBitmask_Percent | SwkbdKeyDisableBitmask_ForwardSlash | SwkbdKeyDisableBitmask_Backslash);
 
         char buffer[maxStringLength + 1];
@@ -370,7 +370,10 @@ namespace edz::hlp {
     }
 
     EResult controllerLEDInitialize() {
-        ER_TRY(hidsysGetUniquePadsFromNpad(hidGetHandheldMode() ? HidNpadIdType_Handheld : HidNpadIdType_No1, uniquePadIds, 2, &uniquePadCnt));
+        PadState pad;
+	    padInitializeDefault(&pad);
+	    padUpdate(&pad);
+        ER_TRY(hidsysGetUniquePadsFromNpad(padIsHandheld(&pad) ? HidNpadIdType_Handheld : HidNpadIdType_No1, uniquePadIds, 2, &uniquePadCnt));
 
         std::memset(&patternOn, 0x00, sizeof(HidsysNotificationLedPattern));
         std::memset(&patternOff, 0x00, sizeof(HidsysNotificationLedPattern));
