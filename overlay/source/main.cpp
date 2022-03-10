@@ -124,9 +124,9 @@ public:
             renderer->drawString("WiFi信号：", false, 45, 360, 18, renderer->a(tsl::style::color::ColorText));
 
             s32 temparature = 0;
-            tsGetTemperatureMilliC(TsLocation_Internal, &temparature);
-            renderer->drawString(edz::hlp::formatString("%.02f °C", temparature / 1000.0F).c_str(), false, 240, 160, 18, renderer->a(tsl::style::color::ColorHighlight));
             tsGetTemperatureMilliC(TsLocation_External, &temparature);
+            renderer->drawString(edz::hlp::formatString("%.02f °C", temparature / 1000.0F).c_str(), false, 240, 160, 18, renderer->a(tsl::style::color::ColorHighlight));
+            tsGetTemperatureMilliC(TsLocation_Internal, &temparature);
             renderer->drawString(edz::hlp::formatString("%.02f °C", temparature / 1000.0F).c_str(), false, 240, 190, 18, renderer->a(tsl::style::color::ColorHighlight));
 
             u32 cpuClock = 0, gpuClock = 0, memClock = 0;
