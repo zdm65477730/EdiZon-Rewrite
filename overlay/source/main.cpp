@@ -124,16 +124,17 @@ public:
             renderer->drawString("WiFi信号：", false, 45, 360, 18, renderer->a(tsl::style::color::ColorText));
 
             s32 temparature = 0;
-            if(hosversionAtLeast(14,0,0))
+            if(hosversionAtLeast(14,0,0)) {
                 tsGetTemperature(TsLocation_External, &temparature);
-            else
-                tsGetTemperatureMilliC(TsLocation_External, &temparature);
-            renderer->drawString(edz::hlp::formatString("%.02f °C", temparature / 1000.0F).c_str(), false, 240, 160, 18, renderer->a(tsl::style::color::ColorHighlight));
-            if(hosversionAtLeast(14,0,0))
+                renderer->drawString(edz::hlp::formatString("%2d °C", temparature).c_str(), false, 240, 160, 18, renderer->a(tsl::style::color::ColorHighlight));
                 tsGetTemperature(TsLocation_Internal, &temparature);
-            else
+                renderer->drawString(edz::hlp::formatString("%2d °C", temparature).c_str(), false, 240, 190, 18, renderer->a(tsl::style::color::ColorHighlight));
+            } else {
+                tsGetTemperatureMilliC(TsLocation_External, &temparature);
+                renderer->drawString(edz::hlp::formatString("%.02f °C", temparature / 1000.0F).c_str(), false, 240, 160, 18, renderer->a(tsl::style::color::ColorHighlight));
                 tsGetTemperatureMilliC(TsLocation_Internal, &temparature);
-            renderer->drawString(edz::hlp::formatString("%.02f °C", temparature / 1000.0F).c_str(), false, 240, 190, 18, renderer->a(tsl::style::color::ColorHighlight));
+                renderer->drawString(edz::hlp::formatString("%.02f °C", temparature / 1000.0F).c_str(), false, 240, 190, 18, renderer->a(tsl::style::color::ColorHighlight));
+            }
 
             u32 cpuClock = 0, gpuClock = 0, memClock = 0;
 
