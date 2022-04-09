@@ -37,6 +37,7 @@
 #include <unistd.h>
 #include <netinet/in.h>
 
+using namespace tsl;
 
 class GuiCheats : public tsl::Gui {
 public:
@@ -44,12 +45,12 @@ public:
     ~GuiCheats() { }
 
     virtual tsl::elm::Element* createUI() override {
-        auto rootFrame = new tsl::elm::OverlayFrame("EdiZon", "金手指");
+        auto rootFrame = new tsl::elm::OverlayFrame("EdiZon", "CheatsOverlayFrameText"_tr);
 
         if (edz::cheat::CheatManager::getCheats().size() == 0) {
             auto warning = new tsl::elm::CustomDrawer([](tsl::gfx::Renderer *renderer, u16 x, u16 y, u16 w, u16 h){
                 renderer->drawString("\uE150", false, 180, 250, 90, renderer->a(0xFFFF));
-                renderer->drawString("无金手指被加载！", false, 110, 340, 25, renderer->a(0xFFFF));
+                renderer->drawString("NoCheatsLoadedErrorCheatsCustomDrawerText"_tr.c_str(), false, 110, 340, 25, renderer->a(0xFFFF));
             });
 
             rootFrame->setContent(warning);
@@ -57,7 +58,7 @@ public:
         } else {
             auto list = new tsl::elm::List();
 
-            list->addItem(new tsl::elm::CategoryHeader("可用的金手指"));
+            list->addItem(new tsl::elm::CategoryHeader("AvailableCheatsCategoryHeaderText"_tr));
             
             for (auto &cheat : edz::cheat::CheatManager::getCheats()) {
                 auto cheatToggleItem = new tsl::elm::ToggleListItem(cheat->getName(), cheat->isEnabled());
@@ -107,21 +108,21 @@ public:
      }
 
     virtual tsl::elm::Element* createUI() override {
-        auto rootFrame = new tsl::elm::OverlayFrame("EdiZon", "系统信息");
+        auto rootFrame = new tsl::elm::OverlayFrame("EdiZon", "StatusOverlayFrameText"_tr);
 
         auto infos = new tsl::elm::CustomDrawer([this](tsl::gfx::Renderer *renderer, u16 x, u16 y, u16 w, u16 h){
 
-            renderer->drawString("CPU温度：", false, 45, 160, 18, renderer->a(tsl::style::color::ColorText));
-            renderer->drawString("主板温度：", false, 45, 190, 18, renderer->a(tsl::style::color::ColorText));
+            renderer->drawString("CPUTempStatusCustomDrawerText"_tr.c_str(), false, 45, 160, 18, renderer->a(tsl::style::color::ColorText));
+            renderer->drawString("PCBTempStatusCustomDrawerText"_tr.c_str(), false, 45, 190, 18, renderer->a(tsl::style::color::ColorText));
 
             renderer->drawRect(x, 203, w, 1, renderer->a(tsl::style::color::ColorFrame));
-            renderer->drawString("CPU时钟：", false, 45, 230, 18, renderer->a(tsl::style::color::ColorText));
-            renderer->drawString("GPU时钟：", false, 45, 260, 18, renderer->a(tsl::style::color::ColorText));
-            renderer->drawString("MEM内存时钟：", false, 45, 290, 18, renderer->a(tsl::style::color::ColorText));
+            renderer->drawString("CPUClockStatusCustomDrawerText"_tr.c_str(), false, 45, 230, 18, renderer->a(tsl::style::color::ColorText));
+            renderer->drawString("GPUClockStatusCustomDrawerText"_tr.c_str(), false, 45, 260, 18, renderer->a(tsl::style::color::ColorText));
+            renderer->drawString("MemClockStatusCustomDrawerText"_tr.c_str(), false, 45, 290, 18, renderer->a(tsl::style::color::ColorText));
 
             renderer->drawRect(x, 303, w, 1, renderer->a(tsl::style::color::ColorFrame));
-            renderer->drawString("本地IP：", false, 45, 330, 18, renderer->a(tsl::style::color::ColorText));
-            renderer->drawString("WiFi信号：", false, 45, 360, 18, renderer->a(tsl::style::color::ColorText));
+            renderer->drawString("LanIPStatusCustomDrawerText"_tr.c_str(), false, 45, 330, 18, renderer->a(tsl::style::color::ColorText));
+            renderer->drawString("WifiSignalStatusCustomDrawerText"_tr.c_str(), false, 45, 360, 18, renderer->a(tsl::style::color::ColorText));
 
             s32 temparature = 0;
             if(hosversionAtLeast(14,0,0)) {
@@ -153,7 +154,7 @@ public:
             renderer->drawString(edz::hlp::formatString("%.01f MHz", memClock / 1'000'000.0F).c_str(), false, 240, 290, 18, renderer->a(tsl::style::color::ColorHighlight));
 
             if (this->m_ipAddress == INADDR_LOOPBACK)
-                renderer->drawString("离线", false, 240, 330, 18, renderer->a(tsl::style::color::ColorHighlight));
+                renderer->drawString("NoIPStatusCustomDrawerText"_tr.c_str(), false, 240, 330, 18, renderer->a(tsl::style::color::ColorHighlight));
             else 
                 renderer->drawString(this->m_ipAddressString.c_str(), false, 240, 330, 18, renderer->a(tsl::style::color::ColorHighlight));
 
@@ -186,12 +187,12 @@ public:
         auto *rootFrame = new tsl::elm::HeaderOverlayFrame();
         rootFrame->setHeader(new tsl::elm::CustomDrawer([this](tsl::gfx::Renderer *renderer, s32 x, s32 y, s32 w, s32 h) {
             renderer->drawString("EdiZon", false, 20, 50, 30, renderer->a(tsl::style::color::ColorText));
-            renderer->drawString("v1.0.0", false, 20, 70, 15, renderer->a(tsl::style::color::ColorDescription));
+            renderer->drawString(VERSION, false, 20, 70, 15, renderer->a(tsl::style::color::ColorDescription));
 
             if (edz::cheat::CheatManager::getProcessID() != 0) {
-                renderer->drawString("程序ID:", false, 150, 40, 15, renderer->a(tsl::style::color::ColorText));
-                renderer->drawString("编译ID:", false, 150, 60, 15, renderer->a(tsl::style::color::ColorText));
-                renderer->drawString("进程ID:", false, 150, 80, 15, renderer->a(tsl::style::color::ColorText));
+                renderer->drawString("AppIDMainCustomDrawerText"_tr.c_str(), false, 150, 40, 15, renderer->a(tsl::style::color::ColorText));
+                renderer->drawString("BuildIDMainCustomDrawerText"_tr.c_str(), false, 150, 60, 15, renderer->a(tsl::style::color::ColorText));
+                renderer->drawString("ProcessIDMainCustomDrawerText"_tr.c_str(), false, 150, 80, 15, renderer->a(tsl::style::color::ColorText));
                 renderer->drawString(GuiMain::s_runningTitleIDString.c_str(), false, 250, 40, 15, renderer->a(tsl::style::color::ColorHighlight));
                 renderer->drawString(GuiMain::s_runningBuildIDString.c_str(), false, 250, 60, 15, renderer->a(tsl::style::color::ColorHighlight));
                 renderer->drawString(GuiMain::s_runningProcessIDString.c_str(), false, 250, 80, 15, renderer->a(tsl::style::color::ColorHighlight));
@@ -200,8 +201,8 @@ public:
 
         auto list = new tsl::elm::List();
 
-        auto cheatsItem = new tsl::elm::ListItem("金手指");
-        auto statsItem  = new tsl::elm::ListItem("系统信息");
+        auto cheatsItem = new tsl::elm::ListItem("AppNameMainListItemText"_tr);
+        auto statsItem  = new tsl::elm::ListItem("SystemInfoMainListItemText"_tr);
         cheatsItem->setClickListener([](s64 keys) {
             if (keys & HidNpadButton_A) {
                 tsl::changeTo<GuiCheats>();
@@ -239,16 +240,18 @@ public:
 class EdiZonOverlay : public tsl::Overlay {
 public:
     EdiZonOverlay() { }
+
     ~EdiZonOverlay() { }
 
     void initServices() override {
+        std::string lanPath = std::string("sdmc:/switch/.overlays/lang/") + APPTITLE + "/";
+        tsl::tr::InitTrans(lanPath);
         edz::dmntcht::initialize();
         edz::cheat::CheatManager::initialize();
         tsInitialize();
         wlaninfInitialize();
         clkrstInitialize();
         pcvInitialize();
-
     } 
 
     virtual void exitServices() override {

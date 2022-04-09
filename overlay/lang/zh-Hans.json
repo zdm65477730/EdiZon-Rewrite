@@ -1,0 +1,72 @@
+{
+    "strings": [
+        {
+            "key": "CheatsOverlayFrameText",
+            "value": "金手指管理器"
+        },
+        {
+            "key": "NoCheatsLoadedErrorCheatsCustomDrawerText",
+            "value": "无金手指被加载！"
+        },
+        {
+            "key": "AvailableCheatsCategoryHeaderText",
+            "value": "可用的金手指"
+        },
+        {
+            "key": "StatusOverlayFrameText",
+            "value": "系统信息"
+        },
+        {
+            "key": "CPUTempStatusCustomDrawerText",
+            "value": "CPU温度："
+        },
+        {
+            "key": "PCBTempStatusCustomDrawerText",
+            "value": "主板温度："
+        },
+        {
+            "key": "CPUClockStatusCustomDrawerText",
+            "value": "CPU时钟："
+        },
+        {
+            "key": "GPUClockStatusCustomDrawerText",
+            "value": "GPU时钟："
+        },
+        {
+            "key": "MemClockStatusCustomDrawerText",
+            "value": "MEM内存时钟："
+        },
+        {
+            "key": "LanIPStatusCustomDrawerText",
+            "value": "本地IP："
+        },
+        {
+            "key": "WifiSignalStatusCustomDrawerText",
+            "value": "WiFi信号："
+        },
+        {
+            "key": "NoIPStatusCustomDrawerText",
+            "value": "离线"
+        },
+        {
+            "key": "AppIDMainCustomDrawerText",
+            "value": "程序ID："
+        },
+        {
+            "key": "BuildIDMainCustomDrawerText",
+            "value": "编译ID："
+        },
+        {
+            "key": "ProcessIDMainCustomDrawerText",
+            "value": "进程ID："
+        },
+        {
+            "key": "AppNameMainListItemText",
+            "value": "金手指"
+        },
+        {
+            "key": "SystemInfoMainListItemText",
+            "value": "系统信息"
+        }
+    ]
+}

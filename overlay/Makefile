@@ -37,14 +37,14 @@ ARCH	:=	-march=armv8-a -mtune=cortex-a57 -mtp=soft -fPIE
 
 CFLAGS	:=	-g3 -Wall -O2 -ffunction-sections \
 			$(ARCH) $(DEFINES) \
-			$(INCLUDE)  -D__SWITCH__ \
-			-D__OVERLAY__ \
+			$(INCLUDE)  -D__SWITCH__ -DVERSION=\"v$(APP_VERSION)\" \
+			-D__OVERLAY__ -DAPPTITLE=\"$(APP_TITLE)\" \
 			-DVERSION_MAJOR=${VERSION_MAJOR} \
 			-DVERSION_MINOR=${VERSION_MINOR} \
 			-DVERSION_MICRO=${VERSION_MICRO} \
 			-DVERSION_STRING=\"$(subst $(SPACE),\$(SPACE),${APP_VERSION})\"
 
-CXXFLAGS	:= $(CFLAGS) -frtti -fexceptions -std=gnu++17
+CXXFLAGS	:= $(CFLAGS) -frtti -fexceptions -std=gnu++20
 
 ASFLAGS	:=	-g3 $(ARCH)
 LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g0 $(ARCH) -Wl,-Map,$(notdir $*.map)
@@ -154,11 +154,15 @@ all: $(BUILD)
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@ $(BUILD) $(OUTDIR)
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+	@rm -rf $(CURDIR)/SdOut
+	@mkdir -p $(CURDIR)/SdOut/switch/.overlays/lang/$(APP_TITLE)
+	@cp -r $(OUTPUT).ovl $(CURDIR)/SdOut/switch/.overlays/
+	@cp -r $(CURDIR)/lang/* $(CURDIR)/SdOut/switch/.overlays/lang/$(APP_TITLE)/
 
 #---------------------------------------------------------------------------------
 clean:
-	@echo " RM   " $(BUILD) $(OUTDIR)
-	@rm -fr $(BUILD) $(OUTDIR)
+	@echo " RM   " $(BUILD) $(OUTDIR) $(CURDIR)/SdOut
+	@rm -fr $(BUILD) $(OUTDIR) $(CURDIR)/SdOut
 
 #---------------------------------------------------------------------------------
 install: all

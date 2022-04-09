@@ -1,0 +1,72 @@
+{
+    "strings": [
+        {
+            "key": "CheatsOverlayFrameText",
+            "value": "Cheats"
+        },
+        {
+            "key": "NoCheatsLoadedErrorCheatsCustomDrawerText",
+            "value": "No Cheats loaded!"
+        },
+        {
+            "key": "AvailableCheatsCategoryHeaderText",
+            "value": "Available cheats"
+        },
+        {
+            "key": "StatusOverlayFrameText",
+            "value": "System Information"
+        },
+        {
+            "key": "CPUTempStatusCustomDrawerText",
+            "value": "CPU Temparature:"
+        },
+        {
+            "key": "PCBTempStatusCustomDrawerText",
+            "value": "PCB Temparature:"
+        },
+        {
+            "key": "CPUClockStatusCustomDrawerText",
+            "value": "CPU Clock:"
+        },
+        {
+            "key": "GPUClockStatusCustomDrawerText",
+            "value": "GPU Clock:"
+        },
+        {
+            "key": "MemClockStatusCustomDrawerText",
+            "value": "MEM Clock:"
+        },
+        {
+            "key": "LanIPStatusCustomDrawerText",
+            "value": "Local IP:"
+        },
+        {
+            "key": "WifiSignalStatusCustomDrawerText",
+            "value": "WiFi Signal:"
+        },
+        {
+            "key": "NoIPStatusCustomDrawerText",
+            "value": "Offline"
+        },
+        {
+            "key": "AppIDMainCustomDrawerText",
+            "value": "Program ID:"
+        },
+        {
+            "key": "BuildIDMainCustomDrawerText",
+            "value": "Build ID:"
+        },
+        {
+            "key": "ProcessIDMainCustomDrawerText",
+            "value": "Process ID:"
+        },
+        {
+            "key": "AppNameMainListItemText",
+            "value": "Cheats"
+        },
+        {
+            "key": "SystemInfoMainListItemText",
+            "value": "System information"
+        }
+    ]
+}
