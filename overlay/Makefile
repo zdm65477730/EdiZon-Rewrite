@@ -154,15 +154,11 @@ all: $(BUILD)
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@ $(BUILD) $(OUTDIR)
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
-	@rm -rf $(CURDIR)/SdOut
-	@mkdir -p $(CURDIR)/SdOut/switch/.overlays/lang/$(APP_TITLE)
-	@cp -r $(OUTPUT).ovl $(CURDIR)/SdOut/switch/.overlays/
-	@cp -r $(CURDIR)/lang/* $(CURDIR)/SdOut/switch/.overlays/lang/$(APP_TITLE)/
 
 #---------------------------------------------------------------------------------
 clean:
-	@echo " RM   " $(BUILD) $(OUTDIR) $(CURDIR)/SdOut
-	@rm -fr $(BUILD) $(OUTDIR) $(CURDIR)/SdOut
+	@echo " RM   " $(BUILD) $(OUTDIR)
+	@rm -fr $(BUILD) $(OUTDIR)
 
 #---------------------------------------------------------------------------------
 install: all
