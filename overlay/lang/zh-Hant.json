@@ -34,7 +34,7 @@
         },
         {
             "key": "MemClockStatusCustomDrawerText",
-            "value": "MEM內存時鐘："
+            "value": "內存時鐘："
         },
         {
             "key": "LanIPStatusCustomDrawerText",
