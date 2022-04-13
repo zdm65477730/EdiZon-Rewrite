@@ -1,6 +1,10 @@
 {
     "strings": [
         {
+            "key": "PluginName",
+            "value": "CheatsManager"
+        },
+        {
             "key": "CheatsOverlayFrameText",
             "value": "Cheats"
         },

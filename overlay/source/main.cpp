@@ -244,8 +244,89 @@ public:
     ~EdiZonOverlay() { }
 
     void initServices() override {
+        std::string jsonStr = R"(
+            {
+                "strings": [
+                    {
+                        "key": "PluginName",
+                        "value": "CheatsManager"
+                    },
+                    {
+                        "key": "CheatsOverlayFrameText",
+                        "value": "Cheats"
+                    },
+                    {
+                        "key": "NoCheatsLoadedErrorCheatsCustomDrawerText",
+                        "value": "No Cheats loaded!"
+                    },
+                    {
+                        "key": "AvailableCheatsCategoryHeaderText",
+                        "value": "Available cheats"
+                    },
+                    {
+                        "key": "StatusOverlayFrameText",
+                        "value": "System Information"
+                    },
+                    {
+                        "key": "CPUTempStatusCustomDrawerText",
+                        "value": "CPU Temparature:"
+                    },
+                    {
+                        "key": "PCBTempStatusCustomDrawerText",
+                        "value": "PCB Temparature:"
+                    },
+                    {
+                        "key": "CPUClockStatusCustomDrawerText",
+                        "value": "CPU Clock:"
+                    },
+                    {
+                        "key": "GPUClockStatusCustomDrawerText",
+                        "value": "GPU Clock:"
+                    },
+                    {
+                        "key": "MemClockStatusCustomDrawerText",
+                        "value": "MEM Clock:"
+                    },
+                    {
+                        "key": "LanIPStatusCustomDrawerText",
+                        "value": "Local IP:"
+                    },
+                    {
+                        "key": "WifiSignalStatusCustomDrawerText",
+                        "value": "WiFi Signal:"
+                    },
+                    {
+                        "key": "NoIPStatusCustomDrawerText",
+                        "value": "Offline"
+                    },
+                    {
+                        "key": "AppIDMainCustomDrawerText",
+                        "value": "Program ID:"
+                    },
+                    {
+                        "key": "BuildIDMainCustomDrawerText",
+                        "value": "Build ID:"
+                    },
+                    {
+                        "key": "ProcessIDMainCustomDrawerText",
+                        "value": "Process ID:"
+                    },
+                    {
+                        "key": "AppNameMainListItemText",
+                        "value": "Cheats"
+                    },
+                    {
+                        "key": "SystemInfoMainListItemText",
+                        "value": "System information"
+                    }
+                ]
+            }
+        )";
         std::string lanPath = std::string("sdmc:/switch/.overlays/lang/") + APPTITLE + "/";
-        tsl::tr::InitTrans(lanPath);
+        tsl::hlp::doWithSmSession([&lanPath, &jsonStr]{
+            tsl::tr::InitTrans(lanPath, jsonStr);
+        });
+
         edz::dmntcht::initialize();
         edz::cheat::CheatManager::initialize();
         tsInitialize();

@@ -1,6 +1,10 @@
 {
     "strings": [
         {
+            "key": "PluginName",
+            "value": "金手指管理器"
+        },
+        {
             "key": "CheatsOverlayFrameText",
             "value": "金手指管理器"
         },
