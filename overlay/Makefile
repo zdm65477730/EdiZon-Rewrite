@@ -37,7 +37,7 @@ ARCH	:=	-march=armv8-a -mtune=cortex-a57 -mtp=soft -fPIE
 
 CFLAGS	:=	-g3 -Wall -O2 -ffunction-sections \
 			$(ARCH) $(DEFINES) \
-			$(INCLUDE)  -D__SWITCH__ -DVERSION=\"v$(APP_VERSION)\" \
+			$(INCLUDE)  -D__SWITCH__ -DVERSION=\"$(APP_VERSION)\" \
 			-D__OVERLAY__ -DAPPTITLE=\"$(APP_TITLE)\" \
 			-DVERSION_MAJOR=${VERSION_MAJOR} \
 			-DVERSION_MINOR=${VERSION_MINOR} \
