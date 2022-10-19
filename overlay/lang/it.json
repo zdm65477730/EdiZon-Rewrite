@@ -1,76 +1,20 @@
 {
-    "strings": [
-        {
-            "key": "PluginName",
-            "value": "CheatsManager"
-        },
-        {
-            "key": "CheatsOverlayFrameText",
-            "value": "Cheats"
-        },
-        {
-            "key": "NoCheatsLoadedErrorCheatsCustomDrawerText",
-            "value": "No Cheats loaded!"
-        },
-        {
-            "key": "AvailableCheatsCategoryHeaderText",
-            "value": "Available cheats"
-        },
-        {
-            "key": "StatusOverlayFrameText",
-            "value": "System Information"
-        },
-        {
-            "key": "CPUTempStatusCustomDrawerText",
-            "value": "CPU Temparature:"
-        },
-        {
-            "key": "PCBTempStatusCustomDrawerText",
-            "value": "PCB Temparature:"
-        },
-        {
-            "key": "CPUClockStatusCustomDrawerText",
-            "value": "CPU Clock:"
-        },
-        {
-            "key": "GPUClockStatusCustomDrawerText",
-            "value": "GPU Clock:"
-        },
-        {
-            "key": "MemClockStatusCustomDrawerText",
-            "value": "MEM Clock:"
-        },
-        {
-            "key": "LanIPStatusCustomDrawerText",
-            "value": "Local IP:"
-        },
-        {
-            "key": "WifiSignalStatusCustomDrawerText",
-            "value": "WiFi Signal:"
-        },
-        {
-            "key": "NoIPStatusCustomDrawerText",
-            "value": "Offline"
-        },
-        {
-            "key": "AppIDMainCustomDrawerText",
-            "value": "Program ID:"
-        },
-        {
-            "key": "BuildIDMainCustomDrawerText",
-            "value": "Build ID:"
-        },
-        {
-            "key": "ProcessIDMainCustomDrawerText",
-            "value": "Process ID:"
-        },
-        {
-            "key": "AppNameMainListItemText",
-            "value": "Cheats"
-        },
-        {
-            "key": "SystemInfoMainListItemText",
-            "value": "System information"
-        }
-    ]
+    "PluginName": "CheatsManager",
+    "CheatsOverlayFrameText": "Cheats",
+    "NoCheatsLoadedErrorCheatsCustomDrawerText": "No Cheats loaded!",
+    "AvailableCheatsCategoryHeaderText": "Available cheats",
+    "StatusOverlayFrameText": "System Information",
+    "CPUTempStatusCustomDrawerText": "CPU Temparature:",
+    "PCBTempStatusCustomDrawerText": "PCB Temparature:",
+    "CPUClockStatusCustomDrawerText": "CPU Clock:",
+    "GPUClockStatusCustomDrawerText": "GPU Clock:",
+    "MemClockStatusCustomDrawerText": "MEM Clock:",
+    "LanIPStatusCustomDrawerText": "Local IP:",
+    "WifiSignalStatusCustomDrawerText": "WiFi Signal:",
+    "NoIPStatusCustomDrawerText": "Offline",
+    "AppIDMainCustomDrawerText": "Program ID:",
+    "BuildIDMainCustomDrawerText": "Build ID:",
+    "ProcessIDMainCustomDrawerText": "Process ID:",
+    "AppNameMainListItemText": "Cheats",
+    "SystemInfoMainListItemText": "System information"
 }

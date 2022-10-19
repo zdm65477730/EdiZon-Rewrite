@@ -1,76 +1,20 @@
 {
-    "strings": [
-        {
-            "key": "PluginName",
-            "value": "金手指管理器"
-        },
-        {
-            "key": "CheatsOverlayFrameText",
-            "value": "金手指管理器"
-        },
-        {
-            "key": "NoCheatsLoadedErrorCheatsCustomDrawerText",
-            "value": "無金手指被加載！"
-        },
-        {
-            "key": "AvailableCheatsCategoryHeaderText",
-            "value": "可用的金手指"
-        },
-        {
-            "key": "StatusOverlayFrameText",
-            "value": "系統信息"
-        },
-        {
-            "key": "CPUTempStatusCustomDrawerText",
-            "value": "CPU溫度："
-        },
-        {
-            "key": "PCBTempStatusCustomDrawerText",
-            "value": "主板溫度："
-        },
-        {
-            "key": "CPUClockStatusCustomDrawerText",
-            "value": "CPU時鐘："
-        },
-        {
-            "key": "GPUClockStatusCustomDrawerText",
-            "value": "GPU時鐘："
-        },
-        {
-            "key": "MemClockStatusCustomDrawerText",
-            "value": "內存時鐘："
-        },
-        {
-            "key": "LanIPStatusCustomDrawerText",
-            "value": "本地IP："
-        },
-        {
-            "key": "WifiSignalStatusCustomDrawerText",
-            "value": "WiFi信號："
-        },
-        {
-            "key": "NoIPStatusCustomDrawerText",
-            "value": "離線"
-        },
-        {
-            "key": "AppIDMainCustomDrawerText",
-            "value": "程序ID："
-        },
-        {
-            "key": "Buil誒IDMainCustomDrawerText",
-            "value": "編譯ID："
-        },
-        {
-            "key": "ProcessIDMainCustomDrawerText",
-            "value": "進程ID："
-        },
-        {
-            "key": "AppNameMainListItemText",
-            "value": "金手指"
-        },
-        {
-            "key": "SystemInfoMainListItemText",
-            "value": "系統信息"
-        }
-    ]
+    "PluginName": "金手指管理器",
+    "CheatsOverlayFrameText": "金手指管理器",
+    "NoCheatsLoadedErrorCheatsCustomDrawerText": "無金手指被加載！",
+    "AvailableCheatsCategoryHeaderText": "可用的金手指",
+    "StatusOverlayFrameText": "系統信息",
+    "CPUTempStatusCustomDrawerText": "CPU溫度：",
+    "PCBTempStatusCustomDrawerText": "主板溫度：",
+    "CPUClockStatusCustomDrawerText": "CPU時鐘：",
+    "GPUClockStatusCustomDrawerText": "GPU時鐘：",
+    "MemClockStatusCustomDrawerText": "內存時鐘：",
+    "LanIPStatusCustomDrawerText": "本地IP：",
+    "WifiSignalStatusCustomDrawerText": "WiFi信號：",
+    "NoIPStatusCustomDrawerText": "離線",
+    "AppIDMainCustomDrawerText": "程序ID：",
+    "Buil誒IDMainCustomDrawerText": "編譯ID：",
+    "ProcessIDMainCustomDrawerText": "進程ID：",
+    "AppNameMainListItemText": "金手指",
+    "SystemInfoMainListItemText": "系統信息"
 }
